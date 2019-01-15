@@ -17,7 +17,7 @@ clutter found in real projects.
     directory to the exercise folder.
 ----
 
-$ cd ~/Development/<your exercise folder>/01_Introduction_Tools-exercises/java-helloworld
+$ cd ~/Development/clintonbeardsley-java-blue-exercises/01_Introduction_Tools-exercises/java-helloworld
 
 <your exercise folder> should be replaced by the exercises folder with your name, e.g. brianlauvray-java-blue-exercises
 
@@ -73,14 +73,14 @@ drwxr-xr-x  4 cbeardsley  staff   128 Jan 14 16:27 src
     directory listing in Exercise 4?
 ----
 
-database, pom.xml and src.
+Only pom.xml.
 
 ----
 7.  What are the names of the folders, including any dot-folders, displayed in 
     the directory listing in Exercise 4?
 ----
 
-. and ..
+. (current directory), .. (parent directory), database, and src.
 
 ----
 8.  pom.xml is a Maven build file. You will learn more about Maven in later 
