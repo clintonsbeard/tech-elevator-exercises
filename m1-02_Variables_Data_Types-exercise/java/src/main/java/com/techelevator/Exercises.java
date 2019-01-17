@@ -100,11 +100,11 @@ public class Exercises {
         she find?
         */
 
-		double quarterMoney = 0.25D;
-		double dimeMoney = 0.10D;
-		double nickelMoney = 0.05D;
-		double totalMoneyAmount = quarterMoney + dimeMoney + (2.0 * nickelMoney);
-		System.out.println(totalMoneyAmount);
+		double centsPerQuarter = 0.25D;
+		double centsPerDime = 0.10D;
+		double centsPerNickel = 0.05D;
+		double totalCentsAmount = centsPerQuarter + centsPerDime + (2.0 * centsPerNickel);
+		System.out.println(totalCentsAmount);
 		
         /*
         11. Mrs. Hilt's favorite first grade classes are baking muffins. Mrs. Brier's
@@ -126,8 +126,8 @@ public class Exercises {
 		
 		double costOfYoyo = 0.24D;
 		double costOfWhistle = 0.14D;
-		double totalSpentOnToys = costOfYoyo + costOfWhistle;
-		System.out.println(totalSpentOnToys);
+		double totalMoneySpentOnToys = costOfYoyo + costOfWhistle;
+		System.out.println(totalMoneySpentOnToys);
 
         /*
         13. Mrs. Hilt made 5 Rice Krispie Treats. She used 8 large marshmallows
@@ -267,7 +267,7 @@ public class Exercises {
         money did she pay for all of the hot dogs?
         */
 		
-		int numberOfHotDogs = 6;
+		double numberOfHotDogs = 6.0D;
 		double costOfHotDogs = 0.50D;
 		double totalCostOfHotDogs = numberOfHotDogs * costOfHotDogs;
 		System.out.println(totalCostOfHotDogs);
@@ -431,37 +431,66 @@ public class Exercises {
         prepare 276 oatmeal cookies at a time?
         */
 		
-		int 
+		int totalNumberOfCookies = 276;
+		int cookiesPerTray = 12;
+		int numberOfTraysNeeded = totalNumberOfCookies / cookiesPerTray;
+		System.out.println(numberOfTraysNeeded);
 
         /*
         43. Marian’s friends were coming over that afternoon so she made 480
         bite-sized pretzels. If one serving is equal to 12 pretzels, how many
         servings of bite-sized pretzels was Marian able to prepare?
         */
+		
+		int totalPretzelsMade = 480;
+		int pretzelsPerServing = 12;
+		int numberOfServings = totalPretzelsMade / pretzelsPerServing;
+		System.out.println(numberOfServings);
 
         /*
         44. Lastly, she baked 53 lemon cupcakes for the children living in the city
         orphanage. If two lemon cupcakes were left at home, how many
         boxes with 3 lemon cupcakes each were given away?
         */
+		
+		int lemonCupcakesBaked = 53;
+		int lemonCupcakesLeftAtHome = 2;
+		int lemonCupcakesPerBox = 3;
+		int numberOfBoxes = (lemonCupcakesBaked - lemonCupcakesLeftAtHome) / lemonCupcakesPerBox;
+		System.out.println(numberOfBoxes);
 
         /*
         45. Susie's mom prepared 74 carrot sticks for breakfast. If the carrots
         were served equally to 12 people, how many carrot sticks were left
         uneaten?
         */
-
+		
+		int numberOfCarrotSticks = 74;
+		int numberOfPeople = 12;
+		int carrotSticksLeftOver = numberOfCarrotSticks % numberOfPeople; 
+		System.out.println(carrotSticksLeftOver);
+		
         /*
         46. Susie and her sister gathered all 98 of their teddy bears and placed
         them on the shelves in their bedroom. If every shelf can carry a
         maximum of 7 teddy bears, how many shelves will be filled?
         */
+		
+		int numberOfTeddyBears = 98;
+		int numberOfTeddyBearsPerShelf = 7;
+		int numberOfShelvesFilled = numberOfTeddyBears / numberOfTeddyBearsPerShelf;
+		System.out.println(numberOfShelvesFilled);
 
         /*
         47. Susie’s mother collected all family pictures and wanted to place all of
         them in an album. If an album can contain 20 pictures, how many
         albums will she need if there are 480 pictures?
         */
+		
+		int numberOfPicturesPerAlbum = 20;
+		int numberOfPictures = 480;
+		int numberOfAlbumsNeeded = numberOfPictures / numberOfPicturesPerAlbum;
+		System.out.println(numberOfAlbumsNeeded);
 
         /*
         48. Joe, Susie’s brother, collected all 94 trading cards scattered in his
@@ -469,6 +498,13 @@ public class Exercises {
         cards, how many boxes were filled and how many cards are there in
         the unfilled box?
         */
+		
+		int numberOfTradingCards = 94;
+		int tradingCardsPerBox = 8;
+		int numberOfBoxesNeeded = numberOfTradingCards / tradingCardsPerBox;
+		int numberOfTradingCardsInUnfilledBox = numberOfTradingCards % tradingCardsPerBox;
+		System.out.println(numberOfBoxesNeeded);
+		System.out.println(numberOfTradingCardsInUnfilledBox);
 
         /*
         49. Susie’s father repaired the bookshelves in the reading room. If he has
@@ -476,11 +512,21 @@ public class Exercises {
         how many books will each shelf contain?
         */
 
+		int numberOfBooks = 210;
+		int numberOfRepairedShelves = 10;
+		int numberOfBooksPerRepairedShelves = numberOfBooks / numberOfRepairedShelves;
+		System.out.println(numberOfBooksPerRepairedShelves);
+		
         /*
         50. Cristina baked 17 croissants. If she planned to serve this equally to
         her seven guests, how many will each have?
         */
-
+		
+		int numberOfCroissantsBaked = 17;
+		int numberOfGuests = 7;
+		int numberOfCroissantsPerGuest = numberOfCroissantsBaked / numberOfGuests;
+		System.out.println(numberOfCroissantsPerGuest);
+		
         /*
             CHALLENGE PROBLEMS
         */
@@ -491,7 +537,18 @@ public class Exercises {
         Hint: Calculate the hourly rate for each painter, combine them, and then divide the total walls in feet by the combined hourly rate of the painters.
         Challenge: How many days will it take the pair to paint 623 rooms assuming they work 8 hours a day?.
         */
-
+		
+		float roomAreaInFeet = 12 * 14;
+		float billRoomHourlyPaintRate = roomAreaInFeet / 2.15F;
+		float jillRoomHourlyPaintRate = roomAreaInFeet / 1.9F;
+		float billAndJillHourlyPaintRate = billRoomHourlyPaintRate + jillRoomHourlyPaintRate;
+		float numberOfRooms = 5.0F;
+		float roomAreaForFiveRooms = numberOfRooms * roomAreaInFeet;
+		float hoursForBillAndJillToPaintFiveRooms = roomAreaForFiveRooms / billAndJillHourlyPaintRate;
+		System.out.println(hoursForBillAndJillToPaintFiveRooms);
+		float hoursForBillAndJillToPaint623Rooms = (623.0F * roomAreaInFeet) / billAndJillHourlyPaintRate;
+		System.out.println(hoursForBillAndJillToPaint623Rooms);
+		
         /*
         Create and assign variables to hold your first name, last name, and middle initial. Using concatenation,
         build an additional variable to hold your full name in the order of last name, first name, middle initial. The
@@ -499,14 +556,24 @@ public class Exercises {
         with a period.
         Example: "Hopper, Grace B."
         */
+		
+		String firstName = "Clinton";
+		String middleInitial = "J";
+		String lastName = "Beardsley";
+		String fullName = lastName + ", " + firstName + " " + middleInitial + ".";
+		System.out.println(fullName);
 
         /*
-        The distance between New York and Chicago is 800 miles, and the train has already travelled 537 miles.
+        The distance between New York and Chicago is 800 miles, and the train has already traveled 537 miles.
         What percentage of the trip has been completed?
-        Hint: The percent completed is the miles already travelled divided by the total miles.
+        Hint: The percent completed is the miles already traveled divided by the total miles.
         Challenge: Display as an integer value between 0 and 100 using casts.
         */
-
+		
+		float milesBetweenNewYorkAndChicago = 800;
+		float milesAlreadyTraveled = 537;
+		float percentAlreadyTraveled = milesAlreadyTraveled / milesBetweenNewYorkAndChicago;
+		System.out.println(percentAlreadyTraveled);
 
 	}
 
