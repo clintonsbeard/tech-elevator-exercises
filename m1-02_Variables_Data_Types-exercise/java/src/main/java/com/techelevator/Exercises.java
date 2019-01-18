@@ -570,10 +570,10 @@ public class Exercises {
         Challenge: Display as an integer value between 0 and 100 using casts.
         */
 		
-		float milesBetweenNewYorkAndChicago = 800;
-		float milesAlreadyTraveled = 537;
+		float milesBetweenNewYorkAndChicago = 800.0F;
+		float milesAlreadyTraveled = 537.0F;
 		float percentAlreadyTraveled = milesAlreadyTraveled / milesBetweenNewYorkAndChicago;
-		System.out.println(percentAlreadyTraveled);
+		System.out.println((int) percentAlreadyTraveled);
 
 	}
 
