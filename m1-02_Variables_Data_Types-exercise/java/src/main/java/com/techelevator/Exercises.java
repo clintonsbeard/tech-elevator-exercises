@@ -542,6 +542,7 @@ public class Exercises {
 		float billRoomHourlyPaintRate = roomAreaInFeet / 2.15F;
 		float jillRoomHourlyPaintRate = roomAreaInFeet / 1.9F;
 		float billAndJillHourlyPaintRate = billRoomHourlyPaintRate + jillRoomHourlyPaintRate;
+		
 		float numberOfRooms = 5.0F;
 		float roomAreaForFiveRooms = numberOfRooms * roomAreaInFeet;
 		float hoursForBillAndJillToPaintFiveRooms = roomAreaForFiveRooms / billAndJillHourlyPaintRate;

@@ -28,7 +28,7 @@ public class Exercises {
 	
 	public boolean sameFirstLast(int[] nums) {
 		
-		if (nums[nums.length] >= 1 nums[0] == nums[nums.length - 1]) {
+		if (nums.length >= 0 && (nums[0] == nums[nums.length - 1])) {
 			return true;
 		}
 		return false;
@@ -54,6 +54,9 @@ public class Exercises {
 	
 	public boolean commonEnd(int[] a, int[] b) {
 		
+		if ((a[0] == b[0]) || (a[a.length - 1] == b[b.length - 1])) {
+				return true;
+			}
 		return false;
 	}
 
@@ -105,8 +108,11 @@ public class Exercises {
 	
 	public int[] maxEnd3(int[] nums) {
 		
-		return new int[] {nums[2], nums[1], nums[0]};
-	}
+		if (nums[0] > nums[2]) {
+			return new int[] {nums[0], nums[0], nums[0]};
+		}
+		return new int[] {nums[2], nums[2], nums[2]};
+	}	
 
 	/*
 	 9. Given an array of ints, return the sum of the first 2 elements in the array. If the array length
@@ -118,7 +124,16 @@ public class Exercises {
 	
 	public int sum2(int[] nums) {
 		
-		return 0;
+		if(nums.length == 0) {
+			return 0;
+		}
+		else if(nums.length == 1) {
+			return nums[0];
+		}
+		else if(nums.length < 2) {
+			return nums[0] + nums[1];
+		}
+	return nums[0] + nums[1];
 	}
 
 	/*
@@ -131,7 +146,7 @@ public class Exercises {
 	
 	public int[] middleWay(int[] a, int[] b) {
 		
-		return new int[] {};
+		return new int[] {a[1], b[1]};
 	}
 
 	/*
@@ -142,9 +157,17 @@ public class Exercises {
 	 countEvens([1, 3, 5]) → 0
 	 */
 	
-	public int countEvens(int[] nums) {
+	public int countEvens(int[] nums) { /* Commenting the steps out to explain this to myself because loops give me trouble. */
 		
-		return 0;
+		int evenCount = 0; /* Creating a variable that we need to find the value for to solve the problem (created here to eliminate variable scope problems)! */
+		
+		for (int i = 0; i < nums.length; i++) { /* Start at 0; stop at the end of the array; go to the next index. */ 
+			
+			if (nums[i] % 2 == 0) { /* If index is divisible by 2 (or EVEN)... */
+				evenCount++; /* (or evenCount = evenCount + 1) ... add each successful instance into the variable, each +1 is an addition to the count. */
+			}
+		}
+		return evenCount; /* Returns the final count.  I'm sure you'll let me know if any of my comments are incorrect, and I appreciate any help.  Sorry for the mess up there! ^ */
 	}
 
 	/*
@@ -158,7 +181,22 @@ public class Exercises {
 	
 	public int sum13(int[] nums) {
 		
-		return 0;
+		int sumOfNumbersInArrayExcept13 = 0; /* Again, creating the variable to hold the answer I need */
+		
+		for (int i = 0; i < nums.length; i++) { /* Start 0, stop at end, go to next index */
+			
+			if (nums.length == 0) {
+				return 0; /* If the array is empty (length == 0), give me a 0 back */
+			}
+			else if (nums[i] == 13) { /* If a number in the array is 13... */
+				i = i + 1; /* This index (i) and the next index (i + 1) don't count in the sum */
+			}
+			else { /* Otherwise... */
+				sumOfNumbersInArrayExcept13 = sumOfNumbersInArrayExcept13 + nums[i]; /* The total sum of the array will be equal to anything already added into the variable + nums[i] (which is each new index of the loop until it stops), which due to the code above will be anything aside from 13s and the numbers after them */
+				/* ^ AKA sumOfNumbersInArrayExcept13 += nums[i] */
+				}
+		}
+		return sumOfNumbersInArrayExcept13; /* Give me back what you added together and that's the answer! */
 	}
 
 	/*
@@ -170,7 +208,13 @@ public class Exercises {
 	
 	public boolean has22(int[] nums) {
 		
-		return false;
+		for (int i = 0; i < nums.length - 1; i++) { /* Start at 0, however stop 1 from the end (length - 1) otherwise nums[i + 1] in the next step will cause a problem because it doesn't exist, go to next index */
+			
+			if (nums[i] == 2 && (nums[i + 1] == 2)) { /* If this index (nums[1] and the next nums [i + 1] are BOTH 2... */
+				return true;
+			}
+		}
+		return false; /* If the above isn't TRUE, it must be FALSE. */
 	}
 	
 	/*
@@ -181,8 +225,14 @@ public class Exercises {
 	 */
 	
 	public boolean lucky13(int[] nums) {
-		
-		return false;
+	
+		for (int i = 0; i < nums.length; i++) {
+			
+			if (nums[i] == 1 || nums[i] == 3) {
+				return false;
+			}
+		}
+		return true;
 	}
 
 	/*
@@ -192,12 +242,20 @@ public class Exercises {
 	 sum28([1, 2, 3, 4]) → false
 	 */
 	
-	public boolean sum28(int[] nums) {
+	public boolean sum28(int[] nums) { 
 		
-		if () {
-			return true;
+		int sumOfAllTwos = 0; /* Tempted to name it sumOfAllFears but that's bad variable naming */
+		
+		for (int i = 0; i < nums.length; i++) { /* Standard */
+			
+			if (nums[i] == 2) { /* Does the index equal 2?  Cool, do this ... */
+				sumOfAllTwos = sumOfAllTwos + 2; /* Each time it's 2, this will add 2 into the variable */
+			}
+		}	
+		if (sumOfAllTwos == 8) { /* Does the variable equal 8? Putting it here in the parents and not up a bracket in the child means this can't get called before the adding is finished */
+			return true; /* Great, give me a true! */
 		}
-		return false;
+		return false; /* Nope, sorry! */
 	}
-	
+
 }
