@@ -6,27 +6,31 @@ public class TempConvert {
 
 	public static void main(String[] args) {
 
+		System.out.print("Please enter the temperature: ");
+		
 		Scanner in = new Scanner (System.in);
+		double temperature = in.nextDouble();
 		
-		System.out.println("Would you like to convert from Fahrenheit or Celsius?");
-		
-		if (Fahrenheit) {
-			System.out.print("Please enter the temperature in Fahrenheit: ");
-			double fahrenheitTemperature = in.nextDouble();
-			
-			System.out.print("Here is your temperature in Celsius: ");
-			double fahrenheitTemperature = (fahrenheitTemperature - 32) / 1.8
+		System.out.print("Is the temperature in (C)elcius, or (F)arenheit? ");
+		in.nextLine();
+		String fahrenheitOrCelsius = in.nextLine();
+		 
+		if (fahrenheitOrCelsius.equalsIgnoreCase("c")) {
+			System.out.printf("%-2.1f",temperature);
+			System.out.print("C is ");
+			System.out.printf("%-2.1f",temperature * 1.8 + 32.0);
+			System.out.print("F.");
 		}
-		if (Celsius) {
-			System.out.println("Please enter the temperature (in Celsius): ");
-			double celsiusTemperature = in.nextDouble();
-			
-			System.out.print("Here is your temperature in Celsius: ");
-			double celsiusTemperature = in.nextDouble();
+		else if (fahrenheitOrCelsius.equalsIgnoreCase("f")) {
+			System.out.printf("%-2.1f",temperature);
+			System.out.print("F is ");
+			System.out.printf("%-2.1f",(temperature - 32.0) / 1.8);
+			System.out.print("C.");
 		}
 		else {
-			System.out.println("Unknown command.");
-		}	
+			System.out.print("Unknown command.  Please restart the program and choose either C for Celsius or F for Fahrenheit.");
+			in.nextLine();
+		}
 	}
-
+	
 }
