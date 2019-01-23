@@ -21,7 +21,9 @@ public class Exercises {
 	 array2List( {"Red", "Orange", "Yellow"} )  ->  ["Red", "Orange", "Yellow"]
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"] 
 	 */
+	
 	public List<String> array2List(String[] stringArray) {
+		
 		return null;
 	}
 	
@@ -31,6 +33,7 @@ public class Exercises {
 	 list2Array( ["Red", "Orange", "Yellow"] )  ->  {"Red", "Orange", "Yellow"}
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
+	
 	public String[] list2Array(List<String> stringList) {
 		return null;
 	}
@@ -42,8 +45,18 @@ public class Exercises {
 	 no4LetterWords( {"Red", "White", "Blue"} )  ->  ["Red", "White"]
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
+	
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+		
+		List<String> words = new ArrayList<String>();
+		
+			for (String nextWord : stringArray) {
+				if (nextWord.length() != 4) {
+					words.add(nextWord);
+				}
+			}
+			
+		return words;
 	}
 
 
@@ -55,6 +68,7 @@ public class Exercises {
 	 reverseList( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"} )
 		-> ["way", "the", "all", "jingle", "bells", "jingle", "bells", "jingle"]
 	 */
+	
 	public List<String> reverseList(List<String> stringList) {
 		return null;
 	}
@@ -65,6 +79,7 @@ public class Exercises {
 	 arrayInt2ListDouble( {745, 23, 44, 9017, 6} ) -> [372.5, 11.5, 22, 4508.5, 3]
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
+	
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
 		return null;
 	}
@@ -75,6 +90,7 @@ public class Exercises {
 	 findLargest( [987, 1234, 9381, 731, 43718, 8932] ) -> 43718
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
 	 */
+	
 	public Integer findLargest(List<Integer> integerList) {
 		return null;
 	}
