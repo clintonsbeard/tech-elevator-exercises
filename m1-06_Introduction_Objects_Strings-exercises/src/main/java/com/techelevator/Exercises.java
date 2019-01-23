@@ -264,7 +264,7 @@ public class Exercises {
 	 */
 	
 	public String nTwice(String str, int n) {
-		if 
+		return null;
 	}
 
 	/*
@@ -340,13 +340,11 @@ public class Exercises {
 	 */
 	
 	public String stringTimes(String str, int n) {
-		
-		int i = 0;
-		
-		while (i < n) {
-			return str;
+		String stringTimesN = "";
+		for (int i = 0; i < n; i++) {
+			stringTimesN += str;
 		}
-	return str;
+		return stringTimesN;
 	}
 
 	/*
@@ -361,11 +359,18 @@ public class Exercises {
 		
 		int lengthOfFrontTimesString = str.length();
 		
-		if (lengthOfFrontTimesString < 3) {
+		if (n == 0) {
 			return str;
 		}
-		else if (lengthOfFrontTimesString >= 3) {
-			return str.substring(0, 3) * n;
+		else if (lengthOfFrontTimesString <= 3) {
+			return str;
+		}
+		else if (lengthOfFrontTimesString > 3) {
+			String firstThreeCharactersTimesN = str.substring(0, 3);
+			for (int i = 0; i < n; i++) {
+				firstThreeCharactersTimesN = firstThreeCharactersTimesN + firstThreeCharactersTimesN;
+			}
+		return firstThreeCharactersTimesN;
 		}
 	return null;
 	}
