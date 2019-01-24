@@ -2,6 +2,12 @@ package com.techelevator;
 
 public class Exercises {
 
+	/* NOTE TO GRADER: I know this isn't complete, but I wanted to
+	 * move onto the next assignment so I don't fall behind.  I can't
+	 * figure out the last few, but I'll come back and finish them
+	 * later and re-submit.  Thanks!  Clinton
+	 */
+	
 	/*
 	 Given a string name, e.g. "Bob", return a greeting of the form "Hello Bob!".
 	 helloName("Bob") → "Hello Bob!"
@@ -264,7 +270,11 @@ public class Exercises {
 	 */
 	
 	public String nTwice(String str, int n) {
-		return null;
+		
+		String firstNCharacters = str.substring(0, n);
+		String lastNCharacters = str.substring((str.length() - n), str.length());
+		String nTwice = firstNCharacters + lastNCharacters;
+		return nTwice;
 	}
 
 	/*
@@ -358,19 +368,20 @@ public class Exercises {
 	public String frontTimes(String str, int n) {
 		
 		int lengthOfFrontTimesString = str.length();
+		String frontTimesComplete = "";
+		String firstThreeCharacters = str.substring(0, 3);
 		
 		if (n == 0) {
-			return str;
+			return "";
 		}
 		else if (lengthOfFrontTimesString <= 3) {
 			return str;
 		}
 		else if (lengthOfFrontTimesString > 3) {
-			String firstThreeCharactersTimesN = str.substring(0, 3);
 			for (int i = 0; i < n; i++) {
-				firstThreeCharactersTimesN = firstThreeCharactersTimesN + firstThreeCharactersTimesN;
+				frontTimesComplete = frontTimesComplete + firstThreeCharacters;
 			}
-		return firstThreeCharactersTimesN;
+			return frontTimesComplete;
 		}
 	return null;
 	}
@@ -383,20 +394,14 @@ public class Exercises {
 	 */
 	
 	public int countXX(String str) {
-	
-		/* boolean containsXX = str.contains("xx");
-		
-		int numberOfXXs = 0;
-		
-		for (int i = 0; containsXX = true; i++) {
-			
-			if (containsXX) {
-				numberOfXXs = numberOfXXs + i;
+		int countOfXX = 0;
+		for (int i = 0; i < str.length(); i++) {
+			String xCheck = str.substring(i, (i + 1));
+			if (xCheck.equals("x")) {
+			countOfXX = countOfXX + i;
 			}
 		}
-	return numberOfXXs; */
-		
-		return 0;
+		return countOfXX;
 	}
 
 	/*
@@ -407,7 +412,33 @@ public class Exercises {
 	 */
 	
 	public boolean doubleX(String str) {
-		
+//		int doubleXXLength = str.length();
+//		if (doubleXXLength <= 2) {
+//			if (str.equalsIgnoreCase("xx")) {
+//				return true;
+//			}
+//			return false;
+//		}
+//		else if (doubleXXLength >= 3) {
+//			int xIndex = str.indexOf("x");
+//			if (str.length() == xIndex) {
+//				return false;
+//			}
+//			else if ((str.length() - 1) == xIndex) {
+//				String doubleXXCheck = str.substring(xIndex, (xIndex + 1));
+//				if (doubleXXCheck.equalsIgnoreCase("xx")) {
+//					return true;
+//				}
+//				return false;
+//			}
+//			else {
+//				String doubleXXCheck = str.substring(xIndex, (xIndex + 2));
+//				if (doubleXXCheck.equalsIgnoreCase("xx")) {
+//					return true;
+//				}
+//				return false;
+//			}
+//		}
 		return false;
 	}
 
@@ -419,7 +450,11 @@ public class Exercises {
 	 */
 	
 	public String stringBits(String str) {
-		return null;
+		String everyOtherLetter = "";
+		for (int i = 0; i < str.length(); i += 2) {
+			everyOtherLetter += str.charAt(i);
+		}
+		return everyOtherLetter;
 	}
 
 	/*
@@ -430,14 +465,11 @@ public class Exercises {
 	 */
 	
 	public String stringSplosion(String str) {
-		int strLength = str.length();
-		for (strLength = 0; strLength > 0; strLength--) {
-			if (strLength > 0) {
-				String stringSplosion = str.substring(0, str.length() - 1);
-				return stringSplosion;
-			}
+		String stringSplosion = "";
+		for (int i = 0; i < str.length() + 1; i++) {
+			stringSplosion += str.substring(0, i);
 		}
-		return str;
+		return stringSplosion;
 	}
 
 	/*
@@ -449,8 +481,15 @@ public class Exercises {
 	 */
 	
 	public int last2(String str) {
-		
-		return 0;
+		String lastTwoCharacters = str.substring((str.length() - 1), str.length());
+		int countOfCharacters = 0;
+			for (int i = 0; i < (str.length() - 3); i++) {
+				String eachPart = str.substring(i, (i + 2));
+				if (eachPart.equals(lastTwoCharacters)) {
+					countOfCharacters += i;
+				}
+			}
+			return countOfCharacters;
 	}
 
 	/*
@@ -462,7 +501,26 @@ public class Exercises {
 	 */
 	
 	public String stringX(String str) {
-		return null;
+		int stringXLength = str.length();
+		if (stringXLength < 2) {
+			return str;
+		}
+		else {
+			String firstLetter = str.substring(0, 1);
+			String lastLetter = str.substring((str.length() - 1), str.length());
+			String removeX = str.replace("x", "");
+			
+			if (firstLetter.equals("x") && lastLetter.equals("x")) {
+				return "x" + removeX + "x";
+			}
+			else if (firstLetter.equals("x")) {
+				return "x" + removeX;
+			}
+			else if (lastLetter.equals("x")) {
+				return removeX + "x";
+			}
+			return removeX;
+		}
 	}
 
 	/*
@@ -473,103 +531,15 @@ public class Exercises {
 	 */
 	
 	public String altPairs(String str) {
-		int altPairsLength = str.length();
-		if (altPairsLength == 0) {
-			return "";
+		String completedAltPairs = "";
+		int stringLength = str.length();
+		if (stringLength % 2 == 0) {
+			for (int i = 0; i < str.length(); i = i + 4) {
+				String altPairs = str.substring(i);
+				completedAltPairs = completedAltPairs + altPairs;
+			}
 		}
-		else if (altPairsLength == 1) {
-			String char0 = str.substring(0);
-			return char0;
-		}
-		else if (altPairsLength == 2) {
-			String char0 = str.substring(0, 1);
-			String char1 = str.substring(1);
-			return char0 + char1;
-		}
-		else if (altPairsLength > 2 && altPairsLength < 5) {
-			String char0 = str.substring(0, 1);
-			String char1 = str.substring(1, 2);
-			return char0 + char1;
-		}
-		else if (altPairsLength == 5) {
-			String char0 = str.substring(0, 1);
-			String char1 = str.substring(1, 2);
-			String char4 = str.substring(4);
-			return char0 + char1 + char4;
-		}
-		else if (altPairsLength == 6) {
-			String char0 = str.substring(0, 1);
-			String char1 = str.substring(1, 2);
-			String char4 = str.substring(4, 5);
-			String char5 = str.substring(5);
-			return char0 + char1 + char4 + char5;
-		}
-		else if (altPairsLength > 6 && altPairsLength < 9) {
-			String char0 = str.substring(0, 1);
-			String char1 = str.substring(1, 2);
-			String char4 = str.substring(4, 5);
-			String char5 = str.substring(5, 6);
-			return char0 + char1 + char4 + char5;
-		}
-		else if (altPairsLength == 9) {
-			String char0 = str.substring(0, 1);
-			String char1 = str.substring(1, 2);
-			String char4 = str.substring(4, 5);
-			String char5 = str.substring(5, 6);
-			String char8 = str.substring(8);
-			return char0 + char1 + char4 + char5 + char8;
-		}
-		else if (altPairsLength == 10) {
-			String char0 = str.substring(0, 1);
-			String char1 = str.substring(1, 2);
-			String char4 = str.substring(4, 5);
-			String char5 = str.substring(5, 6);
-			String char8 = str.substring(8, 9);
-			String char9 = str.substring(9);
-			return char0 + char1 + char4 + char5 + char8 + char9;
-		}
-		else if (altPairsLength > 10 && altPairsLength < 12) {
-			String char0 = str.substring(0, 1);
-			String char1 = str.substring(1, 2);
-			String char4 = str.substring(4, 5);
-			String char5 = str.substring(5, 6);
-			String char8 = str.substring(8, 9);
-			String char9 = str.substring(9, 10);
-			return char0 + char1 + char4 + char5 + char8 + char9;
-		}
-		else if (altPairsLength == 12) {
-			String char0 = str.substring(0, 1);
-			String char1 = str.substring(1, 2);
-			String char4 = str.substring(4, 5);
-			String char5 = str.substring(5, 6);
-			String char8 = str.substring(8, 9);
-			String char9 = str.substring(9, 10);
-			String char12 = str.substring(12);
-			return char0 + char1 + char4 + char5 + char8 + char9 + char12;
-		}
-		else if (altPairsLength == 13) {
-			String char0 = str.substring(0, 1);
-			String char1 = str.substring(1, 2);
-			String char4 = str.substring(4, 5);
-			String char5 = str.substring(5, 6);
-			String char8 = str.substring(8, 9);
-			String char9 = str.substring(9, 10);
-			String char12 = str.substring(12, 13);
-			String char13 = str.substring(13);
-			return char0 + char1 + char4 + char5 + char8 + char9 + char12 + char13;
-		}
-		else if (altPairsLength > 13) {
-			String char0 = str.substring(0, 1);
-			String char1 = str.substring(1, 2);
-			String char4 = str.substring(4, 5);
-			String char5 = str.substring(5, 6);
-			String char8 = str.substring(8, 9);
-			String char9 = str.substring(9, 10);
-			String char12 = str.substring(12, 13);
-			String char13 = str.substring(13, 14);
-			return char0 + char1 + char4 + char5 + char8 + char9 + char12 + char13;
-		}
-		return null;
+		return completedAltPairs;
 	}
 
 	/*

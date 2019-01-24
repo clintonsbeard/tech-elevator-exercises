@@ -24,7 +24,11 @@ public class Exercises {
 	
 	public List<String> array2List(String[] stringArray) {
 		
-		return null;
+		List<String> array2ListWords = new ArrayList<String>();
+		for (int i = 0; i < array2ListWords.size(); i++) {
+			System.out.println(array2ListWords.get(i));
+		}
+		return array2ListWords;
 	}
 	
 	/*
@@ -35,7 +39,11 @@ public class Exercises {
 	 */
 	
 	public String[] list2Array(List<String> stringList) {
-		return null;
+		
+		List<String> list2Words = new ArrayList<String>();
+		for(int i = 0; i < list2Words.size(); i++) {
+			return list2Words.get(i);
+		}
 	}
 	
 	/*
@@ -48,15 +56,13 @@ public class Exercises {
 	
 	public List<String> no4LetterWords(String[] stringArray) {
 		
-		List<String> words = new ArrayList<String>();
-		
+		List<String> no4LetterWords = new ArrayList<String>();
 			for (String nextWord : stringArray) {
 				if (nextWord.length() != 4) {
-					words.add(nextWord);
+					no4LetterWords.add(nextWord);
 				}
 			}
-			
-		return words;
+		return no4LetterWords;
 	}
 
 
