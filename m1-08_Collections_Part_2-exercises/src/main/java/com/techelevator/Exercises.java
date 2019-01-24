@@ -33,8 +33,8 @@ public class Exercises {
 	 * animalGroupName("giraffe") → "Tower"
 	 * animalGroupName("") -> "unknown"
 	 * animalGroupName("walrus") -> "unknown"
-	 *
 	 */
+	
 	public String animalGroupName(String animalName) {
 		
 		Map<String, String> animalGroups = new HashMap<String, String>();
@@ -77,25 +77,24 @@ public class Exercises {
 	 * isItOnSale("") → 0.00
 	 * isItOnSale("GARAGE1070") → 0.15
 	 * isItOnSale("dungeon9999") → 0.00
-	 *
 	 */
+	
 	public Double isItOnSale(String itemNumber) {
 		
-		Map<String, String> animalGroups = new HashMap<String, String>();
-		animalGroups.put("rhino", "Crash");
-		animalGroups.put("giraffe", "Tower");
-		animalGroups.put("elephant", "Herd");
-		animalGroups.put("lion", "Pride");
-		animalGroups.put("crow", "Murder");
-		animalGroups.put("pigeon", "Kit");
-		animalGroups.put("flamingo", "Pat");
-		animalGroups.put("deer", "Herd");
-		animalGroups.put("dog", "Pack");
-		animalGroups.put("crocodile", "Float");
+		Map<String, Double> roomPrices = new HashMap<String, Double>();
+		roomPrices.put("kitchen4001", 0.20);
+		roomPrices.put("garage1070", 0.15);
+		roomPrices.put("livingroom", 0.10);
+		roomPrices.put("kitchen6073", 0.40);
+		roomPrices.put("bedroom3434", 0.60);
+		roomPrices.put("bath0073", 0.15);
 		
-		String group = animalGroups.get(animalName.toLowerCase());
+		double price = roomPrices.get(itemNumber.toLowerCase());
 		
-		return null;
+		if (price == 0.00 || roomPrices == null) {
+			return 0.00;
+		}
+		return price;
 	}
 
 	/*
@@ -106,8 +105,8 @@ public class Exercises {
 	 *
 	 * robPeterToPayPaul({"Peter": 2000, "Paul": 99}) → {"Peter": 1000, "Paul": 1099}
 	 * robPeterToPayPaul({"Peter": 2000, "Paul": 30000}) → {"Peter": 2000, "Paul": 30000}
-	 *
 	 */
+	
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
 		return null;
 	}
@@ -119,8 +118,8 @@ public class Exercises {
 	 *
 	 * peterPaulPartnership({"Peter": 5000, "Paul": 10000}) → {"Peter": 3750, "Paul": 7500, "PeterPaulPartnership": 3750}
 	 * peterPaulPartnership({"Peter": 3333, "Paul": 1234567890}) → {"Peter": 3333, "Paul": 1234567890}
-	 *
 	 */
+	
 	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
 		return null;
 	}
@@ -133,6 +132,7 @@ public class Exercises {
 	 * beginningAndEnding(["man", "moon", "main"]) → {"m": "n"}
 	 * beginningAndEnding(["muddy", "good", "moat", "good", "night"]) → {"g": "d", "m": "t", "n": "t"}
 	 */
+	
 	public Map<String, String> beginningAndEnding(String[] words) {
 		return null;
 	}
@@ -146,8 +146,8 @@ public class Exercises {
 	 * wordCount(["a", "b", "a", "c", "b"]) → {"b": 2, "c": 1, "a": 2}
 	 * wordCount([]) → {}
 	 * wordCount(["c", "b", "a"]) → {"b": 1, "c": 1, "a": 1}
-	 *
 	 */
+	
 	public Map<String, Integer> wordCount(String[] words) {
 		return null;
 	}
@@ -161,8 +161,8 @@ public class Exercises {
 	 * integerCount([1, 99, 63, 1, 55, 77, 63, 99, 63, 44]) → {1: 1, 44: 1, 55: 1, 63: 3, 77: 1, 99:2}
 	 * integerCount([107, 33, 107, 33, 33, 33, 106, 107]) → {33: 4, 106: 1, 107: 3}
 	 * integerCount([]) → {}
-	 *
 	 */
+	
 	public Map<Integer, Integer> integerCount(int[] ints) {
 		return null;
 	}
@@ -174,8 +174,8 @@ public class Exercises {
 	 * wordMultiple(["a", "b", "a", "c", "b"]) → {"b": true, "c": false, "a": true}
 	 * wordMultiple(["c", "b", "a"]) → {"b": false, "c": false, "a": false}
 	 * wordMultiple(["c", "c", "c", "c"]) → {"c": true}
-	 *
 	 */
+	
 	public Map<String, Boolean> wordMultiple(String[] words) {
 		return null;
 	}
@@ -188,8 +188,8 @@ public class Exercises {
 	 *
 	 * consolidateInventory({"SKU1": 100, "SKU2": 53, "SKU3": 44} {"SKU2":11, "SKU4": 5})
 	 * 	 → {"SKU1": 100, "SKU2": 64, "SKU3": 44, "SKU4": 5}
-	 *
 	 */
+	
 	public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse, Map<String, Integer> remoteWarehouse) {
 		return null;
 	}
@@ -207,10 +207,12 @@ public class Exercises {
 	 * Return Map<String, Integer>, where the key is string from the array, and its last2 count.
 	 *
 	 * last2Revisited(["hixxhi", "xaxxaxaxx", "axxxaaxx"]) → {"hixxhi": 1, "xaxxaxaxx": 1, "axxxaaxx": 2}
-	 *
 	 */
+	
 	public Map<String, Integer> last2Revisited(String[] words) {
-		return null;
+		/* I still haven't figured out last2 from the previous homework, so I'll come back and finish this one after I 
+		 * figure that one out.
+		 */
 	}
 
 	/*
@@ -219,8 +221,8 @@ public class Exercises {
 	 distinctValues( ["red", "yellow", "green", "yellow", "blue", "green", "purple"] ) -> ["red", "yellow", "green", "blue", "purple"]
 	 distinctValues( ["jingle", "bells", "jingle", "bells", "jingle", "all", "the", "way"] ) -> ["jingle", "bells", "all", "the", "way"]
 	 */
+	
 	public List<String> distinctValues(List<String> stringList) {
 		return null;
 	}
-
 }

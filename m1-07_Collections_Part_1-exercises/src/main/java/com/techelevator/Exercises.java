@@ -24,12 +24,13 @@ public class Exercises {
 	
 	public List<String> array2List(String[] stringArray) {
 		
-		List<String> array2ListWords = new ArrayList<String>();
-		for (int i = 0; i < array2ListWords.size(); i++) {
-			System.out.println(array2ListWords.get(i));
+		List<String> array2List = new ArrayList<String>();
+		for (String fruits : stringArray) {
+			array2List.add(fruits);
 		}
-		return array2ListWords;
+	return array2List;
 	}
+
 	
 	/*
 	 Given a list of Strings, return an array containing the same Strings in the same order 
@@ -40,10 +41,11 @@ public class Exercises {
 	
 	public String[] list2Array(List<String> stringList) {
 		
-		List<String> list2Words = new ArrayList<String>();
-		for(int i = 0; i < list2Words.size(); i++) {
-			return list2Words.get(i);
+		List<String> list2Array = new ArrayList<String>();
+		for (String fruitsAgain : stringList) {
+			list2Array.add(fruitsAgain);
 		}
+	return list2Array;
 	}
 	
 	/*
@@ -76,7 +78,19 @@ public class Exercises {
 	 */
 	
 	public List<String> reverseList(List<String> stringList) {
-		return null;
+		
+		Stack<String> forwardsStack = new Stack<String>();
+		for (String christmas : stringList) {
+			forwardsStack.push(christmas);
+		}
+		while(forwardsStack.isEmpty() == false) {
+			String backwardsStack = forwardsStack.pop();
+		}
+		List<String> forwardList = new ArrayList<String>();
+		for (String backwardsChristmas : stringList) {
+			forwardList.add(backwardsChristmas);
+		}
+	return forwardList;
 	}
 
 	/*
@@ -107,8 +121,16 @@ public class Exercises {
 	 oddOnly( {1143, 555, 7, 1772, 9953, 643} ) -> [1143, 555, 7, 9953, 643]
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]  
 	 */
+	
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+		
+		List<Integer> oddOnly = new ArrayList<Integer>();
+		for (Integer nextInteger : integerArray) {
+			if (nextInteger % 2 == 1) {
+				oddOnly.add(nextInteger);
+			}
+		}
+		return oddOnly;
 	}
 	
 	/* 
@@ -118,8 +140,16 @@ public class Exercises {
 	 foundIntTwice( [6, 8, 10, 11, 13], 8 -> false
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
+	
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
-		return false;
+		
+		List<String> foundIntTwice = new ArrayList<String>();
+		for (Integer nextInt : integerList) {
+			if (nextInt.contains(intToFind)) {
+				foundIntTwice.add(nextInt);
+			}
+		}
+	return foundIntTwice;	
 	}
 	
 	/*
@@ -134,8 +164,25 @@ public class Exercises {
 	 
 	 HINT: To convert an integer x to a string you can call x.toString() in your code (e.g. if x = 1 then x.ToString() equals "1")
 	 */
+	
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
+		
+		List<String> fizzBuzzList = new ArrayList<String>();
+		for (Integer nextItem : integerArray) {
+			if (nextItem % 15 == 0) {
+				fizzBuzzList.add("FizzBuzz");
+			}
+			else if (nextItem % 5 == 0) {
+				fizzBuzzList.add("Buzz");
+			}
+			else if (nextItem % 3 == 0) {
+				fizzBuzzList.add("Fizz");
+			}
+			else {
+				fizzBuzzList.add(nextItem.toString());
+			}
+		}
+		return fizzBuzzList;
 	}
 
 	/*
@@ -145,6 +192,7 @@ public class Exercises {
 	 list to the new list before returning it.
 	 interleaveLists( [1, 2, 3], [4, 5, 6] )  ->  [1, 4, 2, 5, 3, 6]
 	 */
+	
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
 		return null;
 	}
@@ -158,6 +206,7 @@ public class Exercises {
 	 boardingGate( [29, 19, 9, 21, 11, 1, 0, 25, 15, 5, 31] ) -> [9, 1, 5, 19, 11, 15, 29, 21, 25]
 	 boardingGate( [0, -1, 44, 31, 17, 7, 27, 16, 26, 6] ) -> [7, 6, 17, 16, 27, 26]
 	 */
+	
 	public List<Integer> boardingGate(List<Integer> seatNumberList) {
 		return null;
 	}
