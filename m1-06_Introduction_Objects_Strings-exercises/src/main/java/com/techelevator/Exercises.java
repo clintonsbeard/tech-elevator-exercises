@@ -10,6 +10,7 @@ public class Exercises {
 	 */
 	
 	public String helloName(String name) {
+		
 		return "Hello " + name + "!";
 	}
 	
@@ -22,6 +23,7 @@ public class Exercises {
 	 */
 	
 	public String makeAbba(String a, String b) {
+		
 		return a + b + b + a;
 	}
 
@@ -35,6 +37,7 @@ public class Exercises {
 	 */
 	
 	public String makeTags(String tag, String word) {
+		
 		String makeTags = "<" + tag + ">" + word + "</" + tag + ">";
 		return makeTags;
 	}
@@ -49,6 +52,7 @@ public class Exercises {
 	 */
 	
 	public String makeOutWord(String out, String word) {	
+		
 		String startBrackets = out.substring(0, 2);
 		String endBrackets = out.substring(2);
 		String wordWithBrackets = startBrackets + word + endBrackets;
@@ -64,6 +68,7 @@ public class Exercises {
 	 */
 	
 	public String extraEnd(String str) {
+		
 		String lastTwoChars = str.substring(str.length() - 2);
 		String lastTwoCharsTimesThree = lastTwoChars + lastTwoChars + lastTwoChars;
 		return lastTwoCharsTimesThree;
@@ -79,6 +84,7 @@ public class Exercises {
 	 */
 	
 	public String firstTwo(String str) {
+		
 		int lengthOfString = str.length();
 		if (lengthOfString == 0) {
 			return "";
@@ -101,6 +107,7 @@ public class Exercises {
 	 */
 	
 	public String firstHalf(String str) {
+		
 		String firstHalf = str.substring(0, str.length() / 2);
 		return firstHalf;
 	}
@@ -114,6 +121,7 @@ public class Exercises {
 	 */
 	
 	public String withoutEnd(String str) {
+		
 		String noFirstOrLastChar = str.substring(1, str.length() - 1);
 		return noFirstOrLastChar;
 	}
@@ -128,6 +136,7 @@ public class Exercises {
 	 */
 	
 	public String comboString(String a, String b) {
+		
 		int lengthOfA = a.length();
 		int lengthOfB = b.length();
 		if (lengthOfA > lengthOfB) {
@@ -150,6 +159,7 @@ public class Exercises {
 	 */
 	
 	public String nonStart(String a, String b) {
+		
 		String aFirstCharOmitted = a.substring(1);
 		String bFirstCharOmitted = b.substring(1);
 		return aFirstCharOmitted + bFirstCharOmitted;
@@ -164,6 +174,7 @@ public class Exercises {
 	 */
 	
 	public String left2(String str) {
+		
 		String firstTwoCharacters = str.substring(0, 2);
 		String lastCharacters = str.substring(2);
 		String wordRotatedLeft2 = lastCharacters + firstTwoCharacters;
@@ -179,6 +190,7 @@ public class Exercises {
 	 */
 	
 	public String right2(String str) {
+		
 		String lastTwoCharacters = str.substring(str.length() - 2);
 		String firstCharacters = str.substring(0, str.length() - 2);
 		String wordRotatedRight2 = lastTwoCharacters + firstCharacters;
@@ -194,6 +206,7 @@ public class Exercises {
 	 */
 	
 	public String theEnd(String str, boolean front) {
+		
 		if (front == true) {
 			String firstLetter = str.substring(0, 1);
 			return firstLetter;
@@ -213,6 +226,7 @@ public class Exercises {
 	 */
 	
 	public String withoutEnd2(String str) {
+		
 		int lengthOfString = str.length();
 		if (lengthOfString == 0 || lengthOfString == 1 || lengthOfString == 2) {
 			return "";
@@ -236,6 +250,7 @@ public class Exercises {
 	 */
 	
 	public String middleTwo(String str) {
+		
 		String middleTwoCharacters = str.substring((str.length() / 2) - 1, (str.length() / 2) + 1);
 		return middleTwoCharacters;
 	}
@@ -248,11 +263,9 @@ public class Exercises {
 	 */
 	
 	public boolean endsLy(String str) {
+		
 		boolean endsWithLy = str.endsWith("ly");
-		if (endsWithLy) {
-			return true;
-		}
-		return false;
+		return endsWithLy;
 	}
 
 	/*
@@ -281,6 +294,7 @@ public class Exercises {
 	 */
 	
 	public String twoChar(String str, int index) {
+		
 		int lengthOfTwoCharString = str.length();
 		if (index < 0) {
 			return str.substring(0, 2);
@@ -365,9 +379,7 @@ public class Exercises {
 		String frontTimesComplete = "";
 		String firstThreeCharacters = str.substring(0, 3);
 		
-		if (n == 0) {
-			return "";
-		}
+	
 		else if (lengthOfFrontTimesString <= 3) {
 			return str;
 		}
@@ -389,10 +401,10 @@ public class Exercises {
 	
 	public int countXX(String str) {
 		int countOfXX = 0;
-		for (int i = 0; i < str.length(); i++) {
-			String xCheck = str.substring(i, (i + 1));
-			if (xCheck.equals("x")) {
-			countOfXX = countOfXX + i;
+		for (int i = 0; i < (str.length() - 1); i++) {
+			String xCheck = str.substring(i, (i + 2));
+			if (xCheck.equals("xx")) {
+			countOfXX = countOfXX + 1;
 			}
 		}
 		return countOfXX;
@@ -406,33 +418,35 @@ public class Exercises {
 	 */
 	
 	public boolean doubleX(String str) {
-//		int doubleXXLength = str.length();
-//		if (doubleXXLength <= 2) {
-//			if (str.equalsIgnoreCase("xx")) {
-//				return true;
-//			}
-//			return false;
-//		}
-//		else if (doubleXXLength >= 3) {
-//			int xIndex = str.indexOf("x");
-//			if (str.length() == xIndex) {
-//				return false;
-//			}
-//			else if ((str.length() - 1) == xIndex) {
-//				String doubleXXCheck = str.substring(xIndex, (xIndex + 1));
-//				if (doubleXXCheck.equalsIgnoreCase("xx")) {
-//					return true;
-//				}
-//				return false;
-//			}
-//			else {
-//				String doubleXXCheck = str.substring(xIndex, (xIndex + 2));
-//				if (doubleXXCheck.equalsIgnoreCase("xx")) {
-//					return true;
-//				}
-//				return false;
-//			}
-//		}
+		
+		int doubleXXLength = str.length();
+		if (doubleXXLength <= 2) {
+			if (str.equalsIgnoreCase("xx")) {
+				return true;
+			}
+			return false;
+		}
+		else if (doubleXXLength >= 3) {
+			int xIndex = str.indexOf("x");
+			if (str.length() == xIndex) {
+				return false;
+			}
+			else if ((str.length() - 1) == xIndex) {
+				String doubleXXCheck = str.substring(xIndex, (xIndex + 1));
+				if (doubleXXCheck.equalsIgnoreCase("xx")) {
+					return true;
+				}
+				return false;
+			}
+			else {
+				String doubleXXCheck = str.substring(xIndex, (xIndex + 2));
+				if (doubleXXCheck.equalsIgnoreCase("xx")) {
+					return true;
+				}
+				return false;
+			}
+		}
+		
 		return false;
 	}
 
@@ -475,12 +489,18 @@ public class Exercises {
 	 */
 	
 	public int last2(String str) {
-		String lastTwoCharacters = str.substring((str.length() - 1), str.length());
+		
+		int wholeWordLength = str.length();
+		if (wholeWordLength <= 2) {
+			return 0;
+		}
+		String lastTwoCharacters = str.substring((str.length() - 2), str.length());
+		String restOfWord = str.substring(0, (str.length() - 2));
 		int countOfCharacters = 0;
-			for (int i = 0; i < (str.length() - 3); i++) {
-				String eachPart = str.substring(i, (i + 2));
+			for (int i = 0; i < (restOfWord.length() - 1); i++) {
+				String eachPart = (restOfWord).substring(i, (i + 2));
 				if (eachPart.equals(lastTwoCharacters)) {
-					countOfCharacters += i;
+					countOfCharacters += 1;
 				}
 			}
 			return countOfCharacters;
