@@ -30,7 +30,6 @@ public class Exercises {
 		}
 	return array2List;
 	}
-
 	
 	/*
 	 Given a list of Strings, return an array containing the same Strings in the same order 
@@ -41,11 +40,11 @@ public class Exercises {
 	
 	public String[] list2Array(List<String> stringList) {
 		
-		List<String> list2Array = new ArrayList<String>();
-		for (String fruitsAgain : stringList) {
-			list2Array.add(fruitsAgain);
+		String[] list2Array = stringList.toArray(new String[stringList.size()]);
+		for (String fruitOrColor : list2Array) {
+			return list2Array;
 		}
-	return list2Array;
+		return null;
 	}
 	
 	/*
@@ -67,7 +66,6 @@ public class Exercises {
 		return no4LetterWords;
 	}
 
-
 	/*
 	 Given a List of Strings, return a new list in reverse order of the original. One obvious solution is to
 	 simply loop through the original list in reverse order, but see if you can come up with an alternative
@@ -80,17 +78,15 @@ public class Exercises {
 	public List<String> reverseList(List<String> stringList) {
 		
 		Stack<String> forwardsStack = new Stack<String>();
-		for (String christmas : stringList) {
-			forwardsStack.push(christmas);
+		List<String> backwardsList = new ArrayList<String>();
+		
+		for (int i = 0; i < stringList.size(); i++) {
+			forwardsStack.push(stringList.get(i));
 		}
-		while(forwardsStack.isEmpty() == false) {
-			String backwardsStack = forwardsStack.pop();
+		while (forwardsStack.isEmpty() == false) {
+			backwardsList.add(forwardsStack.pop());
 		}
-		List<String> forwardList = new ArrayList<String>();
-		for (String backwardsChristmas : stringList) {
-			forwardList.add(backwardsChristmas);
-		}
-	return forwardList;
+		return backwardsList;
 	}
 
 	/*
@@ -101,7 +97,13 @@ public class Exercises {
 	 */
 	
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+		
+		List<Double> arrayInt2ListDouble = new ArrayList<Double>();
+		for (double number : intArray) {
+			number = number / 2;
+			arrayInt2ListDouble.add(number);
+		}
+	return arrayInt2ListDouble;
 	}
 	
 	/*
@@ -112,7 +114,14 @@ public class Exercises {
 	 */
 	
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+		
+		int maxInteger = integerList.get(0);
+		for (int i = 0; i < integerList.size(); i++) {
+			if (integerList.get(i) > maxInteger) {
+				maxInteger = integerList.get(i);
+			}
+		}
+		return maxInteger;
 	}
 	
 	/*
@@ -143,13 +152,16 @@ public class Exercises {
 	
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
 		
-		List<String> foundIntTwice = new ArrayList<String>();
-		for (Integer nextInt : integerList) {
-			if (nextInt.contains(intToFind)) {
-				foundIntTwice.add(nextInt);
+		int matchCount = 0;
+		for (int everyInteger : integerList) {
+			if (everyInteger == intToFind) {
+				matchCount = matchCount + 1;
 			}
 		}
-	return foundIntTwice;	
+		if (matchCount >= 2) {
+			return true;
+		}
+		return false;
 	}
 	
 	/*
@@ -194,7 +206,22 @@ public class Exercises {
 	 */
 	
 	public List<Integer> interleaveLists(List<Integer> listOne, List<Integer> listTwo) {
-		return null;
+		
+		List<Integer> interleaveLists = new ArrayList<Integer>();
+		
+		while (listOne.size() > 0 || listTwo.size() > 0) {
+			if (listOne.size() == 0) {
+				interleaveLists.addAll(listTwo);
+				return interleaveLists;
+			}
+			if (listTwo.size() == 0) {
+				interleaveLists.addAll(listOne);
+				return interleaveLists;
+			}	
+			interleaveLists.add(listOne.remove(0));
+			interleaveLists.add(listTwo.remove(0));
+		}
+		return interleaveLists;
 	}
 
 	/*
@@ -208,7 +235,29 @@ public class Exercises {
 	 */
 	
 	public List<Integer> boardingGate(List<Integer> seatNumberList) {
-		return null;
+		
+		List<Integer> seats1Through10 = new ArrayList<Integer>();
+		List<Integer> seats11Through20 = new ArrayList<Integer>();
+		List<Integer> seats21Through30 = new ArrayList<Integer>();
+		for (int seats : seatNumberList) {
+			
+			if (seats >= 1 && seats <= 10) {
+				seats1Through10.add(seats);
+			}
+			if (seats >= 11 && seats <= 20) {
+				seats11Through20.add(seats);
+			}
+			if (seats >= 21 && seats <= 30) {
+				seats21Through30.add(seats);
+			}
+			if (seats < 1 || seats > 30) {
+			}
+		}
+		List<Integer> seats1Through30 = new ArrayList<Integer>();
+		seats1Through30.addAll(seats1Through10);
+		seats1Through30.addAll(seats11Through20);
+		seats1Through30.addAll(seats21Through30);
+		return seats1Through30;	
 	}
 
 }

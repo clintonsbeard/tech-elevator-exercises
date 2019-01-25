@@ -2,12 +2,6 @@ package com.techelevator;
 
 public class Exercises {
 
-	/* NOTE TO GRADER: I know this isn't complete, but I wanted to
-	 * move onto the next assignment so I don't fall behind.  I can't
-	 * figure out the last few, but I'll come back and finish them
-	 * later and re-submit.  Thanks!  Clinton
-	 */
-	
 	/*
 	 Given a string name, e.g. "Bob", return a greeting of the form "Hello Bob!".
 	 helloName("Bob") → "Hello Bob!"

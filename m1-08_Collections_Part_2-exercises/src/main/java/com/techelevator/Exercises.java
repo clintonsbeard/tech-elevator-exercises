@@ -81,20 +81,24 @@ public class Exercises {
 	
 	public Double isItOnSale(String itemNumber) {
 		
-		Map<String, Double> roomPrices = new HashMap<String, Double>();
-		roomPrices.put("kitchen4001", 0.20);
-		roomPrices.put("garage1070", 0.15);
-		roomPrices.put("livingroom", 0.10);
-		roomPrices.put("kitchen6073", 0.40);
-		roomPrices.put("bedroom3434", 0.60);
-		roomPrices.put("bath0073", 0.15);
+		Map<String, Double> itemPrice = new HashMap<String, Double>();
 		
-		double price = roomPrices.get(itemNumber.toLowerCase());
+		itemPrice.put("KITCHEN4001", 0.20);
+		itemPrice.put("GARAGE1070", 0.15);
+		itemPrice.put("LIVINGROOM", 0.10);
+		itemPrice.put("KITCHEN6073", 0.40);
+		itemPrice.put("BEDROOM3434", 0.60);
+		itemPrice.put("BATH0073", 0.15);
 		
-		if (price == 0.00 || roomPrices == null) {
+		double price = itemPrice.get(itemNumber.toUpperCase());
+		
+		if (itemNumber.length() == 0 || price == 0.00) {
 			return 0.00;
 		}
-		return price;
+		else if (itemNumber.length() > 0 && itemPrice.containsKey(itemNumber.toUpperCase())) {
+			return price;
+		}
+		return 0.00;
 	}
 
 	/*
