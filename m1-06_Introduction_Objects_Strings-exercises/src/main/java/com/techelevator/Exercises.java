@@ -318,6 +318,7 @@ public class Exercises {
 	 */
 	
 	public String middleThree(String str) {
+		
 		String middleThreeCharacters = str.substring((str.length() / 2) - 1, (str.length() / 2) + 2);
 		return middleThreeCharacters;
 	}
@@ -332,6 +333,7 @@ public class Exercises {
 	 */
 	
 	public boolean hasBad(String str) {
+		
 		int lengthOfHasBadString = str.length();
 		if (lengthOfHasBadString == 0 || lengthOfHasBadString == 1 || lengthOfHasBadString == 2) {
 			return false;
@@ -358,6 +360,7 @@ public class Exercises {
 	 */
 	
 	public String stringTimes(String str, int n) {
+		
 		String stringTimesN = "";
 		for (int i = 0; i < n; i++) {
 			stringTimesN += str;
@@ -376,20 +379,23 @@ public class Exercises {
 	public String frontTimes(String str, int n) {
 		
 		int lengthOfFrontTimesString = str.length();
-		String frontTimesComplete = "";
-		String firstThreeCharacters = str.substring(0, 3);
+		String completedFrontTimes = "";
+		String firstThreeLetters = "";
 		
-	
+		if (n == 0) {
+			return "";
+		}
 		else if (lengthOfFrontTimesString <= 3) {
-			return str;
-		}
-		else if (lengthOfFrontTimesString > 3) {
 			for (int i = 0; i < n; i++) {
-				frontTimesComplete = frontTimesComplete + firstThreeCharacters;
+				completedFrontTimes += str;
 			}
-			return frontTimesComplete;
 		}
-	return null;
+		else if (lengthOfFrontTimesString > 3) 
+			firstThreeLetters = str.substring(0, 3);
+			for (int i = 0; i < n; i++) {
+				completedFrontTimes += firstThreeLetters;
+			}
+		return completedFrontTimes;
 	}
 
 	/*
@@ -400,6 +406,7 @@ public class Exercises {
 	 */
 	
 	public int countXX(String str) {
+		
 		int countOfXX = 0;
 		for (int i = 0; i < (str.length() - 1); i++) {
 			String xCheck = str.substring(i, (i + 2));
@@ -419,34 +426,12 @@ public class Exercises {
 	
 	public boolean doubleX(String str) {
 		
-		int doubleXXLength = str.length();
-		if (doubleXXLength <= 2) {
-			if (str.equalsIgnoreCase("xx")) {
+		for (int i = 0; i < (str.length() - 1); i++) {
+			String checkForX = str.substring(i, i + 2);
+			if (checkForX == "xx") {
 				return true;
 			}
-			return false;
 		}
-		else if (doubleXXLength >= 3) {
-			int xIndex = str.indexOf("x");
-			if (str.length() == xIndex) {
-				return false;
-			}
-			else if ((str.length() - 1) == xIndex) {
-				String doubleXXCheck = str.substring(xIndex, (xIndex + 1));
-				if (doubleXXCheck.equalsIgnoreCase("xx")) {
-					return true;
-				}
-				return false;
-			}
-			else {
-				String doubleXXCheck = str.substring(xIndex, (xIndex + 2));
-				if (doubleXXCheck.equalsIgnoreCase("xx")) {
-					return true;
-				}
-				return false;
-			}
-		}
-		
 		return false;
 	}
 
@@ -458,6 +443,7 @@ public class Exercises {
 	 */
 	
 	public String stringBits(String str) {
+		
 		String everyOtherLetter = "";
 		for (int i = 0; i < str.length(); i += 2) {
 			everyOtherLetter += str.charAt(i);
@@ -473,6 +459,7 @@ public class Exercises {
 	 */
 	
 	public String stringSplosion(String str) {
+		
 		String stringSplosion = "";
 		for (int i = 0; i < str.length() + 1; i++) {
 			stringSplosion += str.substring(0, i);
@@ -495,7 +482,7 @@ public class Exercises {
 			return 0;
 		}
 		String lastTwoCharacters = str.substring((str.length() - 2), str.length());
-		String restOfWord = str.substring(0, (str.length() - 2));
+		String restOfWord = str.substring(0, (str.length() - 1));
 		int countOfCharacters = 0;
 			for (int i = 0; i < (restOfWord.length() - 1); i++) {
 				String eachPart = (restOfWord).substring(i, (i + 2));
@@ -515,6 +502,7 @@ public class Exercises {
 	 */
 	
 	public String stringX(String str) {
+		
 		int stringXLength = str.length();
 		if (stringXLength < 2) {
 			return str;
@@ -545,15 +533,9 @@ public class Exercises {
 	 */
 	
 	public String altPairs(String str) {
-		String completedAltPairs = "";
-		int stringLength = str.length();
-		if (stringLength % 2 == 0) {
-			for (int i = 0; i < str.length(); i = i + 4) {
-				String altPairs = str.substring(i);
-				completedAltPairs = completedAltPairs + altPairs;
-			}
-		}
-		return completedAltPairs;
+
+		
+		
 	}
 
 	/*
@@ -565,6 +547,7 @@ public class Exercises {
 	 */
 	
 	public String stringYak(String str) {
+		
 		String replaceYak = str.replace("yak", "");
 		return replaceYak;
 	}

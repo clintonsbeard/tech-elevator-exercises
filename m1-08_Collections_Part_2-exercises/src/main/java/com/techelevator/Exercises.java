@@ -1,8 +1,11 @@
 package com.techelevator;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Exercises {
 
@@ -83,19 +86,19 @@ public class Exercises {
 		
 		Map<String, Double> itemPrice = new HashMap<String, Double>();
 		
-		itemPrice.put("KITCHEN4001", 0.20);
-		itemPrice.put("GARAGE1070", 0.15);
-		itemPrice.put("LIVINGROOM", 0.10);
-		itemPrice.put("KITCHEN6073", 0.40);
-		itemPrice.put("BEDROOM3434", 0.60);
-		itemPrice.put("BATH0073", 0.15);
+		itemPrice.put("kitchen4001", 0.20);
+		itemPrice.put("garage1070", 0.15);
+		itemPrice.put("livingroom", 0.10);
+		itemPrice.put("kitchen6073", 0.40);
+		itemPrice.put("bedroom3434", 0.60);
+		itemPrice.put("bath0073", 0.15);
 		
-		double price = itemPrice.get(itemNumber.toUpperCase());
+		Double price = itemPrice.get(itemNumber.toLowerCase());
 		
-		if (itemNumber.length() == 0 || price == 0.00) {
+		if (itemNumber.length() == 0 || price == null) {
 			return 0.00;
 		}
-		else if (itemNumber.length() > 0 && itemPrice.containsKey(itemNumber.toUpperCase())) {
+		else if (itemNumber.length() > 0 && itemPrice.containsKey(itemNumber.toLowerCase())) {
 			return price;
 		}
 		return 0.00;
@@ -112,6 +115,10 @@ public class Exercises {
 	 */
 	
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
+		
+		Map<String, Integer> robPeterToPayPaul = new HashMap<String, Integer>();
+
+			
 		return null;
 	}
 
@@ -138,7 +145,12 @@ public class Exercises {
 	 */
 	
 	public Map<String, String> beginningAndEnding(String[] words) {
-		return null;
+		
+		Map<String, String> wordAndFirstLetter = new HashMap<String, String>();
+		for (String eachWord : words) {
+			wordAndFirstLetter.put(eachWord.substring(0, 1), eachWord.substring((eachWord.length() - 1), eachWord.length()));
+		}
+		return wordAndFirstLetter;
 	}
 
 	/*
@@ -153,6 +165,12 @@ public class Exercises {
 	 */
 	
 	public Map<String, Integer> wordCount(String[] words) {
+		
+		int count = 0;
+		Map<String, String> letterCount = new HashMap<String, String>();
+		for (String eachLetter : words) {
+			letterCount.put();
+		}
 		return null;
 	}
 
@@ -168,7 +186,14 @@ public class Exercises {
 	 */
 	
 	public Map<Integer, Integer> integerCount(int[] ints) {
-		return null;
+		
+		int count = 0;
+		Map<Integer, Integer> integerCount = new HashMap<Integer, Integer>();
+		for (int eachInteger : ints) {
+			if (eachInteger == ) {
+				count += 1;
+			}
+		}
 	}
 
 	/*
@@ -181,6 +206,11 @@ public class Exercises {
 	 */
 	
 	public Map<String, Boolean> wordMultiple(String[] words) {
+		
+		Map<String, Boolean> wordMultiples = new HashMap<String, Boolean>();
+		for (String eachLetter : words) {
+			wordMultiples.put(eachLetter, true);
+		}
 		return null;
 	}
 
@@ -214,9 +244,8 @@ public class Exercises {
 	 */
 	
 	public Map<String, Integer> last2Revisited(String[] words) {
-		/* I still haven't figured out last2 from the previous homework, so I'll come back and finish this one after I 
-		 * figure that one out.
-		 */
+	
+		return null;
 	}
 
 	/*
@@ -227,6 +256,16 @@ public class Exercises {
 	 */
 	
 	public List<String> distinctValues(List<String> stringList) {
-		return null;
+		
+		Set <String> distinctStrings = new HashSet<String>();
+		for (String eachString : stringList) {
+			distinctStrings.add(eachString);
+		}
+		List <String> newList = new LinkedList<String>();
+		for (String eachDistinctString : distinctStrings) {
+			newList.add(eachDistinctString);
+			distinctStrings.remove(eachDistinctString);	
+		}
+		return newList;
 	}
 }
