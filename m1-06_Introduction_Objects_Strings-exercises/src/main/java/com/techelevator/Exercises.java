@@ -426,10 +426,12 @@ public class Exercises {
 	
 	public boolean doubleX(String str) {
 		
-		for (int i = 0; i < (str.length() - 1); i++) {
-			String checkForX = str.substring(i, i + 2);
-			if (checkForX == "xx") {
-				return true;
+		for (int i = 0; i < str.length() - 1; i++) {
+			if (str.charAt(i) == 'x') {
+				if  (str.charAt(i + 1) == 'x') {
+					return true;
+				}
+				return false;
 			}
 		}
 		return false;
@@ -534,8 +536,15 @@ public class Exercises {
 	
 	public String altPairs(String str) {
 
-		
-		
+		String altPairs = "";
+		for (int i = 0; i < str.length(); i += 4) {
+			int endOfTheWord = i + 2;
+			if (endOfTheWord > str.length()) {
+				endOfTheWord = str.length();
+			}
+			altPairs = altPairs + str.substring(i, endOfTheWord);
+		}
+		return altPairs;
 	}
 
 	/*

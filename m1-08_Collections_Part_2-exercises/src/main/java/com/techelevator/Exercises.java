@@ -115,11 +115,14 @@ public class Exercises {
 	 */
 	
 	public Map<String, Integer> robPeterToPayPaul(Map<String, Integer> peterPaul) {
-		
-		Map<String, Integer> robPeterToPayPaul = new HashMap<String, Integer>();
-
-			
-		return null;
+	
+		if (peterPaul.get("Peter") > 0 && peterPaul.get("Paul") < 1000) {
+			int halfOfPetersMoney = peterPaul.get("Peter") / 2;
+			peterPaul.put("Peter", peterPaul.get("Peter") - halfOfPetersMoney);
+			peterPaul.put("Paul", peterPaul.get("Paul") + halfOfPetersMoney);
+			return peterPaul;
+		}
+		return peterPaul;
 	}
 
     /*
@@ -132,7 +135,17 @@ public class Exercises {
 	 */
 	
 	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
-		return null;
+		
+		if (peterPaul.get("Peter") >= 5000 && peterPaul.get("Paul") >= 10000) {
+			int quarterOfPetersMoney = peterPaul.get("Peter") / 4;
+			int quarterOfPaulsMoney = peterPaul.get("Paul") / 4;
+			peterPaul.put("Peter", (peterPaul.get("Peter") - quarterOfPetersMoney));
+			peterPaul.put("Paul", (peterPaul.get("Paul") - quarterOfPaulsMoney));
+			peterPaul.put("PeterPaulParternship", quarterOfPetersMoney + quarterOfPaulsMoney);
+			
+			return peterPaul;
+		}
+		return peterPaul;
 	}
 
 	/*
@@ -167,7 +180,7 @@ public class Exercises {
 	public Map<String, Integer> wordCount(String[] words) {
 		
 		int count = 0;
-		Map<String, String> letterCount = new HashMap<String, String>();
+		Map<String, Integer> letterCount = new HashMap<String, Integer>();
 		for (String eachLetter : words) {
 			letterCount.put();
 		}
@@ -208,10 +221,7 @@ public class Exercises {
 	public Map<String, Boolean> wordMultiple(String[] words) {
 		
 		Map<String, Boolean> wordMultiples = new HashMap<String, Boolean>();
-		for (String eachLetter : words) {
-			wordMultiples.put(eachLetter, true);
-		}
-		return null;
+		
 	}
 
 	/*

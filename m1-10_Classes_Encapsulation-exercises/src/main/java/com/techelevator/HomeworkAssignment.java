@@ -8,6 +8,30 @@ public class HomeworkAssignment {
 	private int possibleMarks;
 	private String submitterName;
 	
+	/* Derived Property */
+	
+	public String getLetterGrade() {
+		if ((double) totalMarks / (double) possibleMarks > .9) {
+			return "A";
+		}
+		else if ((double) totalMarks / (double) possibleMarks > .8) {
+			return "B";
+		}
+		else if ((double) totalMarks / (double) possibleMarks > .7) {
+			return "C";
+		}
+		else if ((double) totalMarks / (double) possibleMarks > .6) {
+			return "D";
+		}
+		return "F";
+	}
+	
+	/* Constructor */
+	
+	public HomeworkAssignment(int possibleMarks) {
+		this.possibleMarks = possibleMarks;
+	}
+	
 	/* Getters and Setters */
 	
 	public int getTotalMarks() {
@@ -28,9 +52,6 @@ public class HomeworkAssignment {
 
 	/* Methods */
 	
-	public int letterGrade() {
-	public int totalMarks / possibleMarks;
-		if ()
-	}
+	/* No methods in this one. */
 	
 }
