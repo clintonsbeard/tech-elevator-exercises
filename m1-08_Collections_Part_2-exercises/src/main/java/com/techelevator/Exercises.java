@@ -136,12 +136,13 @@ public class Exercises {
 	
 	public Map<String, Integer> peterPaulPartnership(Map<String, Integer> peterPaul) {
 		
+		int quarterOfPetersMoney = peterPaul.get("Peter") / 4;
+		int quarterOfPaulsMoney = peterPaul.get("Paul") / 4;
+		
 		if (peterPaul.get("Peter") >= 5000 && peterPaul.get("Paul") >= 10000) {
-			int quarterOfPetersMoney = peterPaul.get("Peter") / 4;
-			int quarterOfPaulsMoney = peterPaul.get("Paul") / 4;
-			peterPaul.put("Peter", (peterPaul.get("Peter") - quarterOfPetersMoney));
-			peterPaul.put("Paul", (peterPaul.get("Paul") - quarterOfPaulsMoney));
-			peterPaul.put("PeterPaulParternship", quarterOfPetersMoney + quarterOfPaulsMoney);
+			peterPaul.put("PeterPaulPartnership", quarterOfPetersMoney + quarterOfPaulsMoney);
+			peterPaul.put("Peter", peterPaul.get("Peter") - quarterOfPetersMoney);
+			peterPaul.put("Paul", peterPaul.get("Paul") - quarterOfPaulsMoney);
 			
 			return peterPaul;
 		}
@@ -178,12 +179,7 @@ public class Exercises {
 	 */
 	
 	public Map<String, Integer> wordCount(String[] words) {
-		
-		int count = 0;
-		Map<String, Integer> letterCount = new HashMap<String, Integer>();
-		for (String eachLetter : words) {
-			letterCount.put();
-		}
+	
 		return null;
 	}
 
@@ -200,13 +196,7 @@ public class Exercises {
 	
 	public Map<Integer, Integer> integerCount(int[] ints) {
 		
-		int count = 0;
-		Map<Integer, Integer> integerCount = new HashMap<Integer, Integer>();
-		for (int eachInteger : ints) {
-			if (eachInteger == ) {
-				count += 1;
-			}
-		}
+		return null;
 	}
 
 	/*
@@ -220,8 +210,7 @@ public class Exercises {
 	
 	public Map<String, Boolean> wordMultiple(String[] words) {
 		
-		Map<String, Boolean> wordMultiples = new HashMap<String, Boolean>();
-		
+		return null;
 	}
 
 	/*
@@ -267,15 +256,7 @@ public class Exercises {
 	
 	public List<String> distinctValues(List<String> stringList) {
 		
-		Set <String> distinctStrings = new HashSet<String>();
-		for (String eachString : stringList) {
-			distinctStrings.add(eachString);
-		}
-		List <String> newList = new LinkedList<String>();
-		for (String eachDistinctString : distinctStrings) {
-			newList.add(eachDistinctString);
-			distinctStrings.remove(eachDistinctString);	
-		}
-		return newList;
+		return null;
 	}
+	
 }

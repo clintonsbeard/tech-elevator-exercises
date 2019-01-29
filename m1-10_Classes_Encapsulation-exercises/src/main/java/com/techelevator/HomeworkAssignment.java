@@ -11,16 +11,16 @@ public class HomeworkAssignment {
 	/* Derived Property */
 	
 	public String getLetterGrade() {
-		if ((double) totalMarks / (double) possibleMarks > .9) {
+		if ((double) totalMarks / (double) possibleMarks >= .9) {
 			return "A";
 		}
-		else if ((double) totalMarks / (double) possibleMarks > .8) {
+		else if ((double) totalMarks / (double) possibleMarks >= .8) {
 			return "B";
 		}
-		else if ((double) totalMarks / (double) possibleMarks > .7) {
+		else if ((double) totalMarks / (double) possibleMarks >= .7) {
 			return "C";
 		}
-		else if ((double) totalMarks / (double) possibleMarks > .6) {
+		else if ((double) totalMarks / (double) possibleMarks >= .6) {
 			return "D";
 		}
 		return "F";

@@ -28,7 +28,7 @@ public class FruitTree {
 	
 	public boolean pickFruit(int numberOfPiecesToRemove) {
 		if (piecesOfFruitLeft > 0) {
-			piecesOfFruitLeft = piecesOfFruitLeft - numberOfPiecesToRemove;
+			piecesOfFruitLeft -= numberOfPiecesToRemove;
 			return true;
 		}
 		return false;
