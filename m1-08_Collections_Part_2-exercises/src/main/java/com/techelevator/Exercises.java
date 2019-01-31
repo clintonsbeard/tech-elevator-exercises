@@ -1,8 +1,8 @@
 package com.techelevator;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -84,7 +84,7 @@ public class Exercises {
 	
 	public Double isItOnSale(String itemNumber) {
 		
-		Map<String, Double> itemPrice = new HashMap<String, Double>();
+		Map<String, Double> itemPrice = new HashMap<>();
 		
 		itemPrice.put("kitchen4001", 0.20);
 		itemPrice.put("garage1070", 0.15);
@@ -160,7 +160,7 @@ public class Exercises {
 	
 	public Map<String, String> beginningAndEnding(String[] words) {
 		
-		Map<String, String> wordAndFirstLetter = new HashMap<String, String>();
+		Map<String, String> wordAndFirstLetter = new HashMap<>();
 		for (String eachWord : words) {
 			wordAndFirstLetter.put(eachWord.substring(0, 1), eachWord.substring((eachWord.length() - 1), eachWord.length()));
 		}
@@ -180,7 +180,17 @@ public class Exercises {
 	
 	public Map<String, Integer> wordCount(String[] words) {
 	
-		return null;
+		Map<String, Integer> wordCounter = new HashMap<>();
+		
+		for (String eachLetter : words) {
+			if (wordCounter.containsKey(eachLetter)) {
+				wordCounter.put(eachLetter, wordCounter.get(eachLetter) + 1);
+			}
+			else {
+				wordCounter.put(eachLetter, 1);
+			}
+		}
+		return wordCounter;
 	}
 
 	/*
@@ -196,7 +206,17 @@ public class Exercises {
 	
 	public Map<Integer, Integer> integerCount(int[] ints) {
 		
-		return null;
+		Map<Integer, Integer> integerCounter = new HashMap<>();
+		
+		for (Integer eachLetter : ints) {
+			if (integerCounter.containsKey(eachLetter)) {
+				integerCounter.put(eachLetter, integerCounter.get(eachLetter) + 1);
+			}
+			else {
+				integerCounter.put(eachLetter, 1);
+			}
+		}
+		return integerCounter;
 	}
 
 	/*
@@ -210,7 +230,17 @@ public class Exercises {
 	
 	public Map<String, Boolean> wordMultiple(String[] words) {
 		
-		return null;
+		Map<String, Boolean> multipleWordCounter = new HashMap<>();
+		
+		for (String eachLetter : words) {
+			if (multipleWordCounter.containsKey(eachLetter)) {
+				multipleWordCounter.put(eachLetter, true);
+			}
+			else {
+				multipleWordCounter.put(eachLetter, false);
+			}
+		}
+		return multipleWordCounter;
 	}
 
 	/*
@@ -224,8 +254,25 @@ public class Exercises {
 	 */
 	
 	public Map<String, Integer> consolidateInventory(Map<String, Integer> mainWarehouse, Map<String, Integer> remoteWarehouse) {
-		return null;
-	}
+		
+		Map<String, Integer> consolidatedInventory = new HashMap<String, Integer>();
+
+	    for (String eachRemoteKey : remoteWarehouse.keySet()) {
+	        
+	        for (String eachMainKey : mainWarehouse.keySet()) {
+	            
+	            if (eachRemoteKey.equals(eachMainKey)) {
+	                Integer addValues = mainWarehouse.get(eachMainKey) + remoteWarehouse.get(eachRemoteKey);
+	                consolidatedInventory.put(eachMainKey, addValues);
+	            }
+	            else{
+	                consolidatedInventory.put(eachMainKey, mainWarehouse.get(eachMainKey));
+	            	consolidatedInventory.put(eachRemoteKey, remoteWarehouse.get(eachRemoteKey));
+	            }
+	        }
+	    }
+	    return consolidatedInventory;
+	}    
 
 	/*
 	 * Just when you thought it was safe to get back in the water --- last2Revisited!!!!
@@ -244,7 +291,23 @@ public class Exercises {
 	
 	public Map<String, Integer> last2Revisited(String[] words) {
 	
-		return null;
+		Map<String, Integer> last2Revisited = new HashMap<>();
+		
+		for (String eachWord : words) {
+			
+			int count = 0;
+			
+			String lastTwoCharacters = eachWord.substring((eachWord.length() - 2));
+			
+				for (int i = 0; i < eachWord.length() - 2; i++) {
+					String eachPart = eachWord.substring(i, (i + 2));
+					if (eachPart.equals(lastTwoCharacters)) {
+						count++;
+				}
+			}
+			last2Revisited.put(eachWord, count);
+		}
+		return last2Revisited;
 	}
 
 	/*
@@ -256,7 +319,15 @@ public class Exercises {
 	
 	public List<String> distinctValues(List<String> stringList) {
 		
-		return null;
+		Set <String> listOfValues = new HashSet<>();
+			for (String eachValue : stringList) {
+				listOfValues.add(eachValue);
+			}
+		List <String> distinctValues = new ArrayList<>();
+			for (String eachDistinctValue : listOfValues) {
+				distinctValues.add(eachDistinctValue);
+			}
+		return distinctValues;
 	}
 	
 }
