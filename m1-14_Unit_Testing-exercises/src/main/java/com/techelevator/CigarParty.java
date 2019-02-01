@@ -11,6 +11,7 @@ public class CigarParty {
      haveParty(50, false) → true
      haveParty(70, true) → true
      */
+	
     public boolean haveParty(int cigars, boolean isWeekend) {
     	int MinimumCigarCount = 40;
         int MaximumCigarCount = 60;

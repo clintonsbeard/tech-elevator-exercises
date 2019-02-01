@@ -1,4 +1,4 @@
-package com.techelevator.TollBoothCalculator;
+package com.techelevator.PostageCalculator;
 
 public interface DeliveryDriver {
 

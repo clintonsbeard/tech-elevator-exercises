@@ -11,6 +11,15 @@ public class FrontTimes {
      */
     public String generateString(String str, int n) {
         String result = "";
+        if (str == null) {
+        	return "";
+        }
+        if (n == 0) {
+        	return "";
+        }
+        if (n < 0) {
+        	return str;
+        }
         if (str.length() <= 3) {
             for (int i = 0; i < n; i++) {
                 result += str;

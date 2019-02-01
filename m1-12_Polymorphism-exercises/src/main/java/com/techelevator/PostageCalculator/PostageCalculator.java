@@ -13,21 +13,23 @@ public class PostageCalculator {
 
 	public static void main(String[] args) {
 		
-		List<Vehicle> typeOfVehicle = new ArrayList<>();
+		List<DeliveryDriver> typeOfPostage = new ArrayList<>();
+		
+		DeliveryDriver postOfficeFirstClass = new PostOfficeFirstClass();
+		DeliveryDriver postOfficeSecondClass = new PostOfficeSecondClass();
+		DeliveryDriver postOfficeThirdClass = new PostOfficeThirdClass();
+		DeliveryDriver fexEd = new FexEd();
+		DeliveryDriver spuFourDay = new SPUFourDay();
+		DeliveryDriver spuTwoDay = new SPUTwoDay();
+		DeliveryDriver spuNextDay = new SPUNextDay();
 	    
-	    Vehicle carWithNoTrailer = new Car(false);
-	    Vehicle carWithTrailer = new Car(true);
-	    Vehicle tank = new Tank();
-	    Vehicle truckWith4Axles = new Truck(4);
-	    Vehicle truckWith6Axles = new Truck(6);
-	    Vehicle truckWith8Axles = new Truck(8);
-	    
-	    typeOfVehicle.add(carWithNoTrailer);
-	    typeOfVehicle.add(carWithTrailer);
-	    typeOfVehicle.add(tank);
-	    typeOfVehicle.add(truckWith4Axles);
-	    typeOfVehicle.add(truckWith6Axles);
-	    typeOfVehicle.add(truckWith8Axles);
+		typeOfPostage.add(postOfficeFirstClass);
+	    typeOfPostage.add(postOfficeSecondClass);
+	    typeOfPostage.add(postOfficeThirdClass);
+	    typeOfPostage.add(fexEd);
+	    typeOfPostage.add(spuFourDay);
+	    typeOfPostage.add(spuTwoDay);
+	    typeOfPostage.add(spuNextDay);
 	    
 		while (true) {
 			
@@ -51,7 +53,37 @@ public class PostageCalculator {
 			System.out.println("Delivery Method                     Cost");
 			System.out.println("----------------------------------------");
 			
-			System.out.println("Post Office (1st Class): " + thisVehicle.calculateToll(distance));
+			for (DeliveryDriver thisPostageType : typeOfPostage) {
+				
+				if (thisPostageType instanceof PostOfficeFirstClass) {
+					System.out.printf("Post Office (1st Class): $%1.2f", thisPostageType.calculateRate(distance, weight));	
+					System.out.println();
+					}
+				if (thisPostageType instanceof PostOfficeSecondClass) {
+					System.out.printf("Post Office (2nd Class): $%1.2f", thisPostageType.calculateRate(distance, weight));	
+					System.out.println();
+				}
+				if (thisPostageType instanceof PostOfficeThirdClass) {
+					System.out.printf("Post Office (3rd Class): $%1.2f", thisPostageType.calculateRate(distance, weight));	
+					System.out.println();
+				}
+				if (thisPostageType instanceof FexEd) {
+					System.out.printf("FexEd: $%1.2f", thisPostageType.calculateRate(distance, weight));	
+					System.out.println();
+				}
+				if (thisPostageType instanceof SPUFourDay) {
+					System.out.printf("SPU (4-Day Ground): $%1.2f", thisPostageType.calculateRate(distance, weight));	
+					System.out.println();
+				}
+				if (thisPostageType instanceof SPUTwoDay) {
+					System.out.printf("SPU (2-Day Business): $%1.2f", thisPostageType.calculateRate(distance, weight));	
+					System.out.println();
+				}
+				if (thisPostageType instanceof SPUNextDay) {
+					System.out.printf("SPU (Next Day) $%1.2f", thisPostageType.calculateRate(distance, weight));	
+					System.out.println();
+				}
+			}
 		}
 		
 	}

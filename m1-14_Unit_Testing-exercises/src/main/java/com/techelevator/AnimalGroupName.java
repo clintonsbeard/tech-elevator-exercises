@@ -48,17 +48,21 @@ public class AnimalGroupName {
      * GetHerd("elephants") -> "unknown"
      *
      */
+    
     public String getHerd(String animalName) {
     	
     	if( animals.containsKey(animalName.toLowerCase()) ) {
     		return animals.get(animalName.toLowerCase());
-    	} else {
+    	} 
+    	if(animals.containsKey(null)) {
+    		return "unknown";
+    	}
+    	else {
     		return "unknown";
     	}
     	
     	// this is an easier way of doing what we did above
         //return animals.getOrDefault(animalName.toLowerCase(),"unknown");
     }
-
 
 }

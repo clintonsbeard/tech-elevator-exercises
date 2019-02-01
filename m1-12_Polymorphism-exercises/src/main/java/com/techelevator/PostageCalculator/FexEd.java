@@ -1,7 +1,5 @@
 package com.techelevator.PostageCalculator;
 
-import com.techelevator.TollBoothCalculator.DeliveryDriver;
-
 public class FexEd implements DeliveryDriver {
 
 	private String shippingMethod = "FexEd";

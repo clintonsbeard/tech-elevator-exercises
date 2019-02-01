@@ -1,7 +1,5 @@
 package com.techelevator.PostageCalculator;
 
-import com.techelevator.TollBoothCalculator.DeliveryDriver;
-
 public class PostOfficeFirstClass implements DeliveryDriver {
 	
 	@Override
