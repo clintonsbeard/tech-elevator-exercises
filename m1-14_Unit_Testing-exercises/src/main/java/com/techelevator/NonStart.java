@@ -9,6 +9,7 @@ public class NonStart {
      GetPartialString("java", "code") → "avaode"	
      GetPartialString("shotl", "java") → "hotlava"	
      */
+	
     public String getPartialString(String a, String b) {
         if (a.length() == 0) {
             return b.substring(1);
@@ -20,4 +21,5 @@ public class NonStart {
             return a.substring(1) + b.substring(1);
         }
     }
+    
 }

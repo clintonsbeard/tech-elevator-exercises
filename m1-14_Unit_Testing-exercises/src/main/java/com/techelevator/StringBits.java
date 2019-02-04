@@ -8,6 +8,7 @@ public class StringBits {
      GetBits("Hi") → "H"	
      GetBits("Heeololeo") → "Hello"	
      */
+	
     public String getBits(String str) {
         String result = "";
         for (int i = 0; i < str.length(); i++) {
@@ -17,4 +18,5 @@ public class StringBits {
         }
         return result;
     }
+    
 }

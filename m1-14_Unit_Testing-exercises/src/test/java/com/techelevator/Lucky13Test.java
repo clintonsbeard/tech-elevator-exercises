@@ -6,7 +6,7 @@ import org.junit.Assert;
 
 public class Lucky13Test {
 
-private Lucky13 target;
+	private Lucky13 target;
 	
 	@Before
 	public void setup() {
@@ -14,30 +14,23 @@ private Lucky13 target;
 	}
 
 	@Test
-	public void negative_integers_return_false() {
+	public void negative_integers_return_true() {
 		/* Arrange */
+		int[] nums = {-1, -2, -3};
 		/* Act */
-		boolean negativeIntegersTest = target.getLucky(new array = {-2, -4, -6});
+		boolean negativeIntegersTest = target.getLucky(nums);
 		/* Assert */
-		Assert.assertFalse(negativeIntegersTest);
+		Assert.assertTrue("Didn't assert true", negativeIntegersTest);
 	}
-
+	
 	@Test
-	public void zero_returns_an_empty_string() {
+	public void zeroes_return_true() {
 		/* Arrange */
+		int[] nums = {0, 0, 0};
 		/* Act */
-		String zeroIntegerTest = target.generateString("abc", 0);
+		boolean zeroIntegersTest = target.getLucky(nums);
 		/* Assert */
-		Assert.assertEquals("", zeroIntegerTest);
-	}
-
-	@Test
-	public void null_returns_empty_string() {
-		/* Arrange */
-		/* Act */
-		String nullInputTest = target.generateString(null, 6);
-		/* Assert */
-		Assert.assertEquals("", nullInputTest);
+		Assert.assertTrue("Didn't assert true", zeroIntegersTest);
 	}
 
 }

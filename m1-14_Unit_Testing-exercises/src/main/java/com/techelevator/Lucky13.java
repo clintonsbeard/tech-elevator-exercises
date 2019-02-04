@@ -8,6 +8,7 @@ public class Lucky13 {
      GetLucky([1, 2, 3]) → false
      GetLucky([1, 2, 4]) → false
      */
+	
     public boolean getLucky(int[] nums) {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 1 || nums[i] == 3) {

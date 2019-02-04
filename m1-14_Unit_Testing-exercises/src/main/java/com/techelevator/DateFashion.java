@@ -12,6 +12,7 @@ public class DateFashion {
     dateFashion(5, 2) → 0
     dateFashion(5, 5) → 1
     */
+	
     public int getATable(int you, int date) {
         int getTable = 1;
 

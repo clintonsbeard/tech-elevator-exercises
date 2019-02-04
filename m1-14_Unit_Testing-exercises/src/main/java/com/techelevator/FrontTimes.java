@@ -9,6 +9,7 @@ public class FrontTimes {
 	     frontTimes("Chocolate", 3) → "ChoChoCho"	
 	     frontTimes("Abc", 3) → "AbcAbcAbc"	
      */
+	
     public String generateString(String str, int n) {
         String result = "";
         if (str == null) {

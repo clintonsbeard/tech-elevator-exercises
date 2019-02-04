@@ -6,7 +6,7 @@ import org.junit.Assert;
 
 public class Less20Test {
 
-private Less20 target;
+	private Less20 target;
 	
 	@Before
 	public void setup() {
