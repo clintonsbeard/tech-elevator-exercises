@@ -14,12 +14,21 @@ public class Less20Test {
 	}
 
 	@Test
-	public void negative_numbers_return_false() {
+	public void negative_integers_return_false() {
 		/* Arrange */
 		/* Act */
-		boolean isLessThanMultipleOf20Test = target.isLessThanMultipleOf20(-22);
+		boolean type = target.isLessThanMultipleOf20(-22);
 		/* Assert */
-		Assert.assertFalse(isLessThanMultipleOf20Test);
+		Assert.assertFalse(type);
+	}
+	
+	@Test
+	public void zero_returns_false() {
+		/* Arrange */
+		/* Act */
+		boolean type = target.isLessThanMultipleOf20(0);
+		/* Assert */
+		Assert.assertFalse(type);
 	}
 	
 }

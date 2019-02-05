@@ -21,7 +21,7 @@ public class MaxEnd3Test {
 		/* Act */
 		int[] positiveIntegersTest = target.makeArray(nums);
 		/* Assert */
-		Assert.assertEquals(expectedNums, positiveIntegersTest);
+		Assert.assertArrayEquals(nums, expectedNums);
 	}
 	
 	@Test
@@ -32,7 +32,7 @@ public class MaxEnd3Test {
 		/* Act */
 		int[] sameIntegersTest = target.makeArray(nums);
 		/* Assert */
-		Assert.assertEquals(expectedNums, sameIntegersTest);
+		Assert.assertArrayEquals(expectedNums, sameIntegersTest);
 	}
 	
 	@Test
@@ -43,7 +43,7 @@ public class MaxEnd3Test {
 		/* Act */
 		int[] negativeIntegersTest = target.makeArray(nums);
 		/* Assert */
-		Assert.assertEquals(expectedNums, negativeIntegersTest);
+		Assert.assertArrayEquals(expectedNums, negativeIntegersTest);
 	}
 	
 	@Test
@@ -54,7 +54,7 @@ public class MaxEnd3Test {
 		/* Act */
 		int[] zeroIntegerTest = target.makeArray(nums);
 		/* Assert */
-		Assert.assertEquals(expectedNums, zeroIntegerTest);
+		Assert.assertArrayEquals(expectedNums, zeroIntegerTest);
 	}
 
 }

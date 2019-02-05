@@ -14,12 +14,33 @@ public class SameFirstLastTest {
 	}
 
 	@Test
-	public void correct_name_returned_when_key_is_mixed_case() {
+	public void empty_array_returns_false() {
 		/* Arrange */
+		int[] nums = new int[]{};
 		/* Act */
-		String herd = target.getHerd("PiGeOn");
+		boolean type = target.isItTheSame(nums);
 		/* Assert */
-		Assert.assertEquals("Kit", herd);
+		Assert.assertFalse(type);
+	}
+	
+	@Test
+	public void negative_integers_return_true() {
+		/* Arrange */
+		int[] nums = new int[]{-6, 1, -6};
+		/* Act */
+		boolean type = target.isItTheSame(nums);
+		/* Assert */
+		Assert.assertTrue(type);
+	}
+	
+	@Test
+	public void negative_and_positive_of_the_same_integer_return_false() {
+		/* Arrange */
+		int[] nums = new int[]{6, 1, -6};
+		/* Act */
+		boolean type = target.isItTheSame(nums);
+		/* Assert */
+		Assert.assertFalse(type);
 	}
 	
 }

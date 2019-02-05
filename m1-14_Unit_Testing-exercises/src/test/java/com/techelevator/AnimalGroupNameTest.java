@@ -17,27 +17,36 @@ public class AnimalGroupNameTest {
 	public void correct_name_returned_when_key_is_mixed_case() {
 		/* Arrange */
 		/* Act */
-		String herd = target.getHerd("PiGeOn");
+		String type = target.getHerd("PiGeOn");
 		/* Assert */
-		Assert.assertEquals("Kit", herd);
+		Assert.assertEquals("Kit", type);
 	}
 	
 	@Test
 	public void key_not_known_returns_unknown() {
 		/* Arrange */
 		/* Act */
-		String herd = target.getHerd("walrus");
+		String type = target.getHerd("walrus");
 		/* Assert */
-		Assert.assertEquals("unknown", herd);
+		Assert.assertEquals("unknown", type);
+	}
+	
+	@Test
+	public void no_input_returns_unknown() {
+		/* Arrange */
+		/* Act */
+		String type = target.getHerd("");
+		/* Assert */
+		Assert.assertEquals("unknown", type);
 	}
 	
 	@Test
 	public void null_returns_unknown() {
 		/* Arrange */
 		/* Act */
-		String herd = target.getHerd(null);
+		String type = target.getHerd(null);
 		/* Assert */
-		Assert.assertEquals("unknown", herd);
+		Assert.assertEquals("unknown", type);
 	}
 	
 }

@@ -54,9 +54,6 @@ public class AnimalGroupName {
     	if( animals.containsKey(animalName.toLowerCase()) ) {
     		return animals.get(animalName.toLowerCase());
     	} 
-    	if(animals.containsKey(null)) {
-    		return "unknown";
-    	}
     	else {
     		return "unknown";
     	}

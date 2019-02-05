@@ -17,18 +17,27 @@ public class CigarPartyTest {
 	public void negative_cigars_return_false() {
 		/* Arrange */
 		/* Act */
-		boolean haveParty = target.haveParty(-900, false);
+		boolean type = target.haveParty(-900, false);
 		/* Assert */
-		Assert.assertFalse(haveParty);
+		Assert.assertFalse(type);
+	}
+	
+	@Test
+	public void zero_cigars_return_false() {
+		/* Arrange */
+		/* Act */
+		boolean type = target.haveParty(0, false);
+		/* Assert */
+		Assert.assertFalse(type);
 	}
 	
 	@Test
 	public void cigars_way_over_returns_true() {
 		/* Arrange */
 		/* Act */
-		boolean haveParty = target.haveParty(6000000, true);
+		boolean type = target.haveParty(6000000, true);
 		/* Assert */
-		Assert.assertTrue(haveParty);
+		Assert.assertTrue(type);
 	}
 	
 }

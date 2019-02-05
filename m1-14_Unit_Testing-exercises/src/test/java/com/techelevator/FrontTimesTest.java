@@ -17,27 +17,27 @@ private FrontTimes target;
 	public void negative_integers_return_original_string() {
 		/* Arrange */
 		/* Act */
-		String negativeIntegersTest = target.generateString("abc", -22);
+		String type = target.generateString("abc", -6);
 		/* Assert */
-		Assert.assertEquals("abc", negativeIntegersTest);
+		Assert.assertEquals("abc", type);
 	}
 	
 	@Test
 	public void zero_returns_an_empty_string() {
 		/* Arrange */
 		/* Act */
-		String zeroIntegerTest = target.generateString("abc", 0);
+		String type = target.generateString("abc", 0);
 		/* Assert */
-		Assert.assertEquals("", zeroIntegerTest);
+		Assert.assertEquals("", type);
 	}
 	
 	@Test
 	public void null_returns_empty_string() {
 		/* Arrange */
 		/* Act */
-		String nullInputTest = target.generateString(null, 6);
+		String type = target.generateString(null, 6);
 		/* Assert */
-		Assert.assertEquals("", nullInputTest);
+		Assert.assertEquals("", type);
 	}
 	
 }
