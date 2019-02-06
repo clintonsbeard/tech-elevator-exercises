@@ -13,11 +13,6 @@ public class KataRomanNumeralsTest {
 	}
 	
 	@Test
-	public void convert_single_integers() {
-		Assert.assertEquals("Failed to convert 1", "I", target.convertToRomanNumeral(1));
-	}
-	
-	@Test
 	public void convert_single_characters() {
 		Assert.assertEquals("Failed to convert I", 1, target.convertToDigit("I"));
 		Assert.assertEquals("Failed to convert V", 5, target.convertToDigit("V"));
@@ -43,4 +38,31 @@ public class KataRomanNumeralsTest {
 		Assert.assertEquals("Failed to convert CCC", 300, target.convertToDigit("CCC"));
 		Assert.assertEquals("Failed to convert MMM", 3000, target.convertToDigit("MMM"));
 	}
+	
+	@Test
+	public void convert_subtracting_characters() {
+		Assert.assertEquals("Failed to convert IV", 4, target.convertToDigit("IV"));
+		Assert.assertEquals("Failed to convert IX", 9, target.convertToDigit("IX"));
+		Assert.assertEquals("Failed to convert XL", 40, target.convertToDigit("XL"));
+		Assert.assertEquals("Failed to convert CM", 900, target.convertToDigit("CM"));
+	}
+	
+	@Test
+	public void convert_adding_characters() {
+		Assert.assertEquals("Failed to convert VI", 6, target.convertToDigit("VI"));
+		Assert.assertEquals("Failed to convert XVII", 17, target.convertToDigit("XVII"));
+		Assert.assertEquals("Failed to convert MDCLXVI", 1666, target.convertToDigit("MDCLXVI"));
+	}
+	
+	@Test
+	public void convert_adding_and_subtracting_characters() {
+		Assert.assertEquals("Failed to convert MCMXC", 1990, target.convertToDigit("MCMXC"));
+		Assert.assertEquals("Failed to convert MMCMXCIX", 2999, target.convertToDigit("MMCMXCIX"));
+	}
+	
+	@Test
+	public void convert_single_digits() {
+		Assert.assertEquals("Failed to convert 1", "I", target.convertToDigit("1"));
+	}
+	
 }
