@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class KataRomanNumerals {
@@ -36,37 +37,52 @@ public class KataRomanNumerals {
 		return value;
 	}
 	
-	/* Couldn't quite finish this.  Will finish it and re-submit tomorrow.  Thanks! */
-	
-//	public String convertToRomanNumeral(int n) {
-//		
-//		Map<Integer, String> numberMap = new HashMap<>();
-//		numberMap.put(1000, "M");
-//		numberMap.put(900, "CM");
-//		numberMap.put(500, "D");
-//		numberMap.put(400, "CD");
-//		numberMap.put(100, "C");
-//		numberMap.put(90, "XC");
-//		numberMap.put(50, "L");
-//		numberMap.put(40, "XL");
-//		numberMap.put(10, "X");
-//		numberMap.put(9, "IX");
-//		numberMap.put(5, "V");
-//		numberMap.put(4, "IV");
-//		numberMap.put(1, "I");
-//		
-//		String value = "";
-//		
-//		while(n > 0) {
-//			for (int i = 0; i < numberMap.size(); i++) {
-//				int keyCheck = numberMap.
-//				if (n > ) {
-//					value = value + numberMap.g
-//					n = n - numberMap.get(i);
-//				}
-//			}
-//		}
-//		return value;
-//	}
+	public String convertToRomanNumeral(int n) {
+		
+		Map<Integer, String> numberMap = new LinkedHashMap<>();
+		numberMap.put(1000, "M");
+		numberMap.put(900, "CM");
+		numberMap.put(500, "D");
+		numberMap.put(400, "CD");
+		numberMap.put(100, "C");
+		numberMap.put(90, "XC");
+		numberMap.put(50, "L");
+		numberMap.put(40, "XL");
+		numberMap.put(10, "X");
+		numberMap.put(9, "IX");
+		numberMap.put(5, "V");
+		numberMap.put(4, "IV");
+		numberMap.put(1, "I");
+		
+		Map<String, Integer> numberLookup = new LinkedHashMap<>();
+		numberLookup.put("M", 1000);
+		numberLookup.put("CM", 900);
+		numberLookup.put("D", 500);
+		numberLookup.put("CD", 400);
+		numberLookup.put("C", 100);
+		numberLookup.put("XC", 90);
+		numberLookup.put("L", 50);
+		numberLookup.put("XL", 40);
+		numberLookup.put("X", 10);
+		numberLookup.put("IX", 9);
+		numberLookup.put("V", 5);
+		numberLookup.put("IV", 4);
+		numberLookup.put("I", 1);
+
+		String value = "";
+		
+		while(n > 0) {
+			int valueCheck = numberLookup.get(numberLookup.keySet().toArray()[0]);
+			if (n >= valueCheck) {
+				n -= valueCheck;
+				value += numberMap.get(numberMap.keySet().toArray()[0]);
+			}
+			else {
+				numberMap.remove(numberMap.keySet().toArray()[0]);
+				numberLookup.remove(numberLookup.keySet().toArray()[0]);
+			}
+		}
+		return value;
+	}
 	
 }
