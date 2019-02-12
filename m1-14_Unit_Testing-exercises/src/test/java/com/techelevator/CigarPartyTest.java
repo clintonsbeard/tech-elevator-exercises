@@ -14,6 +14,51 @@ public class CigarPartyTest {
 	}
 
 	@Test
+	public void too_few_cigars_on_weekday_returns_false() {
+		/* Arrange */
+		/* Act */
+		boolean type = target.haveParty(39, false);
+		/* Assert */
+		Assert.assertFalse(type);
+	}
+	
+	@Test
+	public void too_few_cigars_on_weekend_returns_false() {
+		/* Arrange */
+		/* Act */
+		boolean type = target.haveParty(20, true);
+		/* Assert */
+		Assert.assertFalse(type);
+	}
+	
+	@Test
+	public void correct_cigars_on_weekday_returns_true() {
+		/* Arrange */
+		/* Act */
+		boolean type = target.haveParty(40, false);
+		/* Assert */
+		Assert.assertTrue(type);
+	}
+	
+	@Test
+	public void too_many_cigars_on_weekday_returns_false() {
+		/* Arrange */
+		/* Act */
+		boolean type = target.haveParty(61, false);
+		/* Assert */
+		Assert.assertFalse(type);
+	}
+	
+	@Test
+	public void correct_cigars_on_weekend_returns_true() {
+		/* Arrange */
+		/* Act */
+		boolean type = target.haveParty(65, true);
+		/* Assert */
+		Assert.assertTrue(type);
+	}
+	
+	@Test
 	public void negative_cigars_return_false() {
 		/* Arrange */
 		/* Act */

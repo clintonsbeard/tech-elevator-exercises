@@ -14,7 +14,7 @@ public class MaxEnd3Test {
 	}
 
 	@Test
-	public void positive_integers_return_expected_result() {
+	public void positive_integers_largest_at_the_beginning_return_expected_result() {
 		/* Arrange */
 		int[] nums = new int[]{4, 1, 0};
 		int[] expectedNums = new int[]{4, 4, 4};
@@ -57,4 +57,15 @@ public class MaxEnd3Test {
 		Assert.assertArrayEquals(expectedNums, zeroIntegerTest);
 	}
 
+	@Test
+	public void positive_integers_largest_at_the_end_return_expected_result() {
+		/* Arrange */
+		int[] nums = new int[]{0, 1, 4};
+		int[] expectedNums = new int[]{4, 4, 4};
+		/* Act */
+		int[] zeroIntegerTest = target.makeArray(nums);
+		/* Assert */
+		Assert.assertArrayEquals(expectedNums, zeroIntegerTest);
+	}
+	
 }
