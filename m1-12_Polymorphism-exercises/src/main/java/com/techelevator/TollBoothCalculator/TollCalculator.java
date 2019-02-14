@@ -34,45 +34,37 @@ public static void main(String[] args) {
         totalDistance += distance;
         
         if (thisVehicle instanceof Car) {
+        	
         	if ( ((Car) thisVehicle).isHasTrailer() ) {
-            	System.out.print("Car (With Trailer): ");
-            	System.out.printf("%2s%-1s%23s", "", distance, "");
-            	System.out.printf("$%-3.2f", thisVehicle.calculateToll(distance));
-                System.out.println();
-            } else if ( !((Car) thisVehicle).isHasTrailer() ) {
-            	System.out.print("Car (No Trailer): ");
-            	System.out.printf("%4s%-1s%23s", "", distance, "");
-            	System.out.printf("$%-3.2f", thisVehicle.calculateToll(distance));
-                System.out.println();
+            	System.out.printf("%-22s%-26s$%-8.2f\n", "Car (With Trailer):", distance, thisVehicle.calculateToll(distance));
             }
-        } if (thisVehicle instanceof Tank) {
-        	System.out.print("Tank: ");
-        	System.out.printf("%16s%-1s%23s", "", distance, "");
-        	System.out.printf("$%-3.2f", thisVehicle.calculateToll(distance));
-            System.out.println();
-        } if (thisVehicle instanceof Truck) {
-        	if (((Truck) thisVehicle).getNumberOfAxles() == 4) {
-        		System.out.print("Truck (4 Axles): ");
-        		System.out.printf("%5s%-1s%23s", "", distance, "");
-            	System.out.printf("$%-3.2f", thisVehicle.calculateToll(distance));
-                System.out.println();
-            } if (((Truck) thisVehicle).getNumberOfAxles() == 6) {
-            	System.out.print("Truck (6 Axles): ");
-            	System.out.printf("%5s%-1s%23s", "", distance, "");
-            	System.out.printf("$%-3.2f", + thisVehicle.calculateToll(distance));
-                System.out.println();
-            } if (((Truck) thisVehicle).getNumberOfAxles() >= 8) {
-            	System.out.print("Truck (8 Axles): ");
-            	System.out.printf("%5s%-1s%23s", "", distance, "");
-            	System.out.printf("$%-3.2f", thisVehicle.calculateToll(distance));
-                System.out.println();
+        	else if ( !((Car) thisVehicle).isHasTrailer() ) {
+            	System.out.printf("%-22s%-26s$%-8.2f\n", "Car (No Trailer):", distance, thisVehicle.calculateToll(distance));
             }
         }
+        if (thisVehicle instanceof Tank) {
+        	System.out.printf("%-22s%-26s$%-8.2f\n", "Tank:", distance, thisVehicle.calculateToll(distance));
+        }
+        else if ( !((Car) thisVehicle).isHasTrailer() ) {
+	        if (thisVehicle instanceof Truck) {
+	        	if (((Truck) thisVehicle).getNumberOfAxles() == 4) {
+	        		System.out.printf("%-22s%-26s$%-8.2f\n", "Truck (4 Axles):", distance, thisVehicle.calculateToll(distance));
+	            }
+	        	else if ( !((Car) thisVehicle).isHasTrailer() ) {
+	            }
+	        	if (((Truck) thisVehicle).getNumberOfAxles() == 6) {
+	            	System.out.printf("%-22s%-26s$%-8.2f\n", "Truck (6 Axles):", distance, thisVehicle.calculateToll(distance));
+	            }
+	        	if (((Truck) thisVehicle).getNumberOfAxles() >= 8) {
+	            	System.out.printf("%-22s%-26s$%-8.2f\n", "Truck (8 Axles):", distance, thisVehicle.calculateToll(distance));
+	            }
+	        }
         totalTollBoothRevenue += thisVehicle.calculateToll(distance);
-    }
-    System.out.println("--------------------------------------------------------");
-    System.out.print("Total Miles Traveled: " + totalDistance);
-    System.out.printf("       Total Revenue: $%3.2f", totalTollBoothRevenue);
+	    }
+	    System.out.println("--------------------------------------------------------");
+	    System.out.print("Total Miles Traveled: " + totalDistance);
+	    System.out.printf("       Total Revenue: $%3.2f", totalTollBoothRevenue);
+		}
 	}
 
 }
