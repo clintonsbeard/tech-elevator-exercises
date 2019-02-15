@@ -11,6 +11,14 @@ start1([1, 2], ) → 1 */
 
 public class DayFour {
 
-	
+	public int start1(int[] a, int[] b) {
+		if (a[0] == 1 && b[0] == 1) {
+			return 2;
+		}
+		if (a[0] == 1 || b[0] == 1) {
+			return 1;
+		}
+		return 0;
+	}
 	
 }

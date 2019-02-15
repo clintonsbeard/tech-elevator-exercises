@@ -14,6 +14,26 @@ has12([3, 1, 4, 5, 2]) → true
 
 public class DayTwo {
 
-	
+	public boolean has12(int[] nums) {
+		boolean has1 = false;
+		boolean has2 = false;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[0] == 1) {
+				has1 = true;
+			}
+			if (i == 1 && nums[i - 1] != 2) {
+				if (nums[i] == 1) {
+				has1 = true;
+				}
+			}
+			if (nums[i] == 2) {
+				has2 = true;
+			}
+ 	    }
+		if (has1 && has2) {
+			return true;
+		}
+		return false;
+	}
 	
 }

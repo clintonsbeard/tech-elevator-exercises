@@ -12,9 +12,20 @@ swapEnds([8, 6, 7, 9, 5]) → [5, 6, 7, 9, 8] */
 
 public class DayOne {
 
-	public static void main(String[] args) {
-
-		
+	public int[] swapEnds(int[] nums) {
+		int firstPlace = 0;
+		int lastPlace = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (i == 0) {
+				firstPlace = nums[i];
+			}
+			if (i == nums.length - 1) {
+				lastPlace = nums[i];
+				nums[0] = lastPlace;
+				nums[i] = firstPlace;
+			}
+ 	    }
+		return nums;
 	}
 
 }

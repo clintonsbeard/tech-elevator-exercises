@@ -14,6 +14,14 @@ greenTicket(1, 1, 2) → 10 */
 
 public class DayThree {
 
-	
+	public int greenTicket(int int1, int int2, int int3) {
+		if (int1 == int2 && int2 == int3) {
+			return 20;
+		}
+		if (int1 == int2 || int2 == int3 || int1 == int3) {
+			return 10;
+		}
+		return 0;
+	}
 	
 }
