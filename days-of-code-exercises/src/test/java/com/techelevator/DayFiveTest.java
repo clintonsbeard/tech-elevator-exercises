@@ -89,4 +89,16 @@ public class DayFiveTest {
 		Assert.assertArrayEquals(expectedArray, actualArray);
 	}
 	
+	@Test
+	public void negative_to_positive_returns_expected_array() {
+		/* Arrange */
+		int dayFiveArrayStart = -1;
+		int dayFiveArrayEnd = 3;
+		int[] expectedArray = {-1, 0, 1, 2};
+		/* Act */
+		int[] actualArray = target.fizzArray3(dayFiveArrayStart, dayFiveArrayEnd);
+		/* Assert */
+		Assert.assertArrayEquals(expectedArray, actualArray);
+	}
+	
 }

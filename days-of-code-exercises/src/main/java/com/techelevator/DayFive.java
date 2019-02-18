@@ -17,18 +17,28 @@ public class DayFive {
 		int[] fizzedArray = new int[Math.abs(end - start)];
 		for (int i = 0; i < Math.abs(end - start); i++) {
 			if (start == 0) {
-				if (end - start > 0) {
+				if (end > 0) {
 					fizzedArray[i] = start + i;
 				}
-				if (end - start < 0) {
+				if (end < 0) {
 					fizzedArray[i] = start - i;
 				}
 			}
 			if (start > 0) {
-				fizzedArray[i] = start + i;
+				if (end > 0) {
+					fizzedArray[i] = start + i;
+				}
+				if (end < 0) {
+					fizzedArray[i] = start - i;
+				}
 			}
 			if (start < 0) {
-				fizzedArray[i] = start - i;
+				if (end > 0) {
+					fizzedArray[i] = start + i;
+				}
+				if (end < 0) {
+					fizzedArray[i] = start - i;
+				}
 			}	
 		}
 		return fizzedArray;
