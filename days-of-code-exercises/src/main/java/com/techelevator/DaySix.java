@@ -11,8 +11,8 @@ only14([1, 1]) → true */
 public class DaySix {
 
 	public boolean only14(int[] nums) {
-		for (int i = 0; i < nums.length; i++) {
-			if (nums[i] != 1 || nums[i] != 4) {
+		for (int num : nums) {
+			if (num != 1 && num != 4) {
 				return false;
 			}
 		}

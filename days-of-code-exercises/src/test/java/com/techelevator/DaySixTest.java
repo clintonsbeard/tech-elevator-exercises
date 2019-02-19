@@ -30,7 +30,27 @@ public class DaySixTest {
 		/* Act */
 		boolean actual = target.only14(arrayInput);
 		/* Assert */
-		Assert.assertTrue(actual);
+		Assert.assertFalse(actual);
+	}
+	
+	@Test
+	public void returns_false_if_negative() {
+		/* Arrange */
+		int[] arrayInput = {-1, -4, 1, 4};
+		/* Act */
+		boolean actual = target.only14(arrayInput);
+		/* Assert */
+		Assert.assertFalse(actual);
+	}
+	
+	@Test
+	public void returns_false_if_zeroes() {
+		/* Arrange */
+		int[] arrayInput = {0, 4, 1, 4};
+		/* Act */
+		boolean actual = target.only14(arrayInput);
+		/* Assert */
+		Assert.assertFalse(actual);
 	}
 	
 }

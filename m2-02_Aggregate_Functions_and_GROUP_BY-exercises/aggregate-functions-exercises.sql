@@ -22,7 +22,7 @@ SELECT (name || ', ' || district) AS name_and_state, population FROM city WHERE 
 -- and should contain values such as ‘Angola (AGO)’ 
 -- (58 rows)
 
-SELECT (name || ' (' || code || ')') AS country_and_code FROM country WHERE continent = 'Africa';
+SELECT (name || ' (' || code || ')') AS country_and_code, region FROM country WHERE continent = 'Africa';
 
 -- 3. The per capita GNP (i.e. GNP multipled by 1000000 then divided by population) of all countries in the 
 -- world sorted from highest to lowest. Recall: GNP is express in units of one million US Dollars 
@@ -90,7 +90,7 @@ SELECT TRUNC(MAX(CAST((population / surfacearea) as decimal)), 4) AS population_
 -- highest life expectancies in descending order. 
 -- (highest life expectancies in world: 83.5, 166.6666, "Andorra")
 
-SELECT lifeexpectancy, TRUNC(CAST((population / surfacearea) as decimal), 4) AS population_density, name FROM country WHERE lifeexpectancy IS NOT NULL ORDER BY lifeexpectancy DESC;
+SELECT lifeexpectancy, TRUNC(CAST((population / surfacearea) as decimal), 4) AS population_density, name FROM country WHERE lifeexpectancy IS NOT NULL ORDER BY lifeexpectancy DESC LIMIT 10;
 
 -- 16. The difference between the previous and current GNP of all the countries in 
 -- the world ordered by the absolute value of the difference. Display both 
