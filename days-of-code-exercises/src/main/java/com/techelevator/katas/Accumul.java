@@ -33,4 +33,5 @@ public class Accumul {
         }
         return accumTotal;
     }
+    
 }

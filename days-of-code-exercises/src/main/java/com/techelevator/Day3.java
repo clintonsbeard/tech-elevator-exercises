@@ -12,7 +12,7 @@ greenTicket(1, 2, 3) → 0
 greenTicket(2, 2, 2) → 20
 greenTicket(1, 1, 2) → 10 */
 
-public class DayThree {
+public class Day3 {
 
 	public int greenTicket(int int1, int int2, int int3) {
 		if (int1 == int2 && int2 == int3) {

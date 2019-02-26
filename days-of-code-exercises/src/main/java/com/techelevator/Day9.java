@@ -8,7 +8,7 @@ no14([7, 2, 3]) → true
 no14([1, 2, 3, 4]) → false
 no14([2, 3, 4]) → false */
 
-public class DayNine {
+public class Day9 {
 
 	public boolean no14(int[] nums) {
 		if (nums[0] == 1 || nums[0] == 4 ||

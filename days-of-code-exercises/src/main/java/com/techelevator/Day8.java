@@ -8,7 +8,7 @@ no23([4, 5]) → true
 no23([4, 2]) → false
 no23([3, 5]) → false */
 
-public class DayEight {
+public class Day8 {
 
 	public boolean no23(int[] nums) {
 		if (nums[0] == 2 || nums[0] == 3 ||

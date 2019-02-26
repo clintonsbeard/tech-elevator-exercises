@@ -4,13 +4,13 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class DayFiveTest {
+public class Day5Test {
 
-	private DayFive target;
+	private Day5 target;
 	
 	@Before
 	public void setup() {
-		target = new DayFive();
+		target = new Day5();
 	}
 
 	@Test

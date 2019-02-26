@@ -12,7 +12,7 @@ has12([3, 1, 4, 5, 2]) → true
 (There are many possible solutions. Here is a challenge -  can you do this by looping through the array only once?)
 (Already solved this problem? Too bad, solve it again. Better.) */
 
-public class DayTwo {
+public class Day2 {
 
 	public boolean has12(int[] nums) {
 		boolean has1 = false;

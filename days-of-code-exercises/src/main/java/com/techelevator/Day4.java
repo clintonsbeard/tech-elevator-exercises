@@ -9,7 +9,7 @@ start1([1, 2, 3], [1, 3]) → 2
 start1([7, 2, 3], [1]) → 1
 start1([1, 2], ) → 1 */
 
-public class DayFour {
+public class Day4 {
 
 	public int start1(int[] a, int[] b) {
 		if (a[0] == 1 && b[0] == 1) {

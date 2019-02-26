@@ -11,7 +11,7 @@ fizzArray3(5, 10) → [5, 6, 7, 8, 9]
 fizzArray3(11, 18) → [11, 12, 13, 14, 15, 16, 17]
 fizzArray3(1, 3) → [1, 2] */
 
-public class DayFive {
+public class Day5 {
 	
 	public int[] fizzArray3(int start, int end) {
 		int[] fizzedArray = new int[Math.abs(end - start)];

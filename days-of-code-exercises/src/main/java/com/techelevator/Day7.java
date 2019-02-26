@@ -9,7 +9,7 @@ noTriples([1, 1, 2, 2, 1]) → true
 noTriples([1, 1, 2, 2, 2, 1]) → false
 noTriples([1, 1, 1, 2, 2, 2, 1]) → false */
 
-public class DaySeven {
+public class Day7 {
 	
 	public boolean noTriples(int[] nums) {
 		for (int i = 0; i < nums.length - 2; i++) {
