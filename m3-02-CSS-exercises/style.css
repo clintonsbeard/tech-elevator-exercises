@@ -13,5 +13,138 @@
     box-sizing: border-box;
     font-family: Tahoma, Verdana, Segoe, sans-serif;
   }
+
+  body {
+    background-color: rgba(192, 192, 192, 0.1);
+    display: grid;
+    grid-template-columns: 200px, 1fr;
+    grid-template-areas:
+    "icon logo"
+    "nav  img"
+    ".    content"
+    ".    copy";
+    grid-gap: 20px;
+  }
+
+  section {
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "whatwedo ourwork contactus"
+  }
+
+  #what-we-do {
+    grid-area: whatwedo;
+  }
+
+  #our-work {
+    grid-area: ourwork;
+  }
+
+  #contact-us {
+    grid-area: contactus;
+  }
+
+  header p {
+    display: none;
+  }
+
+  #social {
+    display: none;
+  }
+
+  aside {
+    border-right: 1px solid rgba(0, 173, 238, 0.4);
+    height: 100%;
+    position: fixed;
+  }
+
+  aside img {
+    grid-area: icon;
+    max-height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header img {
+    grid-area: logo;
+    max-height: 150px;
+    margin-bottom: 20px;
+  }
+
+  nav {
+    width: 200px;
+    grid-area: nav;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #00ADEE;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid rgba(0, 173, 238, 0.4);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    width: 125px;
+  }
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul:nth-child(3) {
+    border-bottom: 0px;
+  }
+
+  main {
+    margin-left: 220px;
+  }
+
+  footer {
+    grid-area: copy;
+  }
   
-  
+  main > img {
+    width: 100%;
+    grid-area: img;
+    margin-bottom: 20px;
+  }
+
+  section h2 {
+    color: #8CC36F;
+  }
+
+  .fa-star-of-life {
+    padding: 10px;
+  }
+
+  .fa-pencil-alt {
+    padding: 10px;
+  }
+
+  .fa-envelope {
+    padding: 10px;
+  }
+
+  section div:nth-child(1){
+    border-right: 1px solid rgba(170, 239, 135, 0.8);
+    padding-right: 20px;
+  }
+
+  section div:nth-child(2){
+    border-right: 1px solid rgba(170, 239, 135, 0.8);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  section div:nth-child(3){
+    padding-left: 20px;
+  }

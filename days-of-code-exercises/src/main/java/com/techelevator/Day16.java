@@ -15,7 +15,7 @@ public class Day16 {
 
 	public int[] fizzArray(int n) {
 		int fizzArray[] = new int[n];
-		for (int i = 0; i < fizzArray.length - 1; i++) {
+		for (int i = 0; i < fizzArray.length; i++) {
 			fizzArray[i] = i;
 		}
 		return fizzArray;
