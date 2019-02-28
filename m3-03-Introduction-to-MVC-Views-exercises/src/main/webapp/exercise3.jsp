@@ -7,7 +7,6 @@
 		<style>
 			li {
 				list-style-type: none;
-				font-size: ${counter};
 			}
 		</style>
 	</head>
@@ -31,8 +30,8 @@
 		</c:choose>
 		<ul>
 		<c:forEach var="step" begin="0" end="${count}">
-   		<c:set var="counter" value="${step - i}"/>
-			<li style="li">${word}</li>
+   		<c:set var="counter" value="${count - step}"/>
+			<li style="font-size: ${counter}pt;">${word}</li>
 		</c:forEach>
 		</ul>
 	</body>
