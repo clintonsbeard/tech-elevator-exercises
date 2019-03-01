@@ -56,3 +56,185 @@ section {
 	background-color: #FFF;
 	border-radius: 7px;
 }
+
+#tile-flexbox {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+#tile-item {
+	display: inline-block;
+	margin: 10px;
+	flex: 0 1 auto;
+	flex-basis: 25%;
+}
+
+#tile-image img {
+	height: 120px;
+ 	width: auto;
+}
+
+#tile-name {
+	display: inline-block;
+	font-weight: bold;
+}
+
+#tile-bestseller {
+	display: inline-block;
+	color: red;
+	font-weight: bold;
+	font-size: small;
+}
+
+#tile-manufacturer {
+	display:block;
+}
+
+#tile-quantity {
+	font-weight: bold;
+	color: SkyBlue;
+}
+
+#tile-price {
+	display: block;
+	margin-top: 20px;
+	color: maroon;
+	font-size: large;
+	font-weight: bold;
+}
+
+#tile-star img {
+	height: 25px;
+ 	width: auto;
+}
+
+#list-flexbox {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#list-item {
+	margin: 10px;
+	flex: 0 1 auto;
+	flex-basis: 90%;
+	border-bottom: 1px solid gray;
+	text-align: left;
+}
+
+#list-item:last-child {
+	border-bottom: 0px;
+}
+
+#list-image {
+	display: inline-block;
+}
+
+#list-image img {
+	display: inline-block;
+	width: 300px;
+ 	height: auto;
+}
+
+#list-text {
+	display: inline-block;
+	text-align: left;
+	margin-left: 50px;
+	position: relative;
+  	bottom: 50px;
+}
+
+#list-name {
+	font-weight: bold;
+	display: inline-block;
+}
+
+#list-bestseller {
+	display: inline-block;
+	color: red;
+	font-weight: bold;
+	font-size: small;
+}
+
+#list-manufacturer {
+	display:block;
+}
+
+#list-quantity {
+	font-weight: bold;
+	color: SkyBlue;
+}
+
+#list-price {
+	display: block;
+	color: maroon;
+	font-size: large;
+	font-weight: bold;
+}
+
+#list-star img {
+	height: 25px;
+ 	width: auto;
+}
+
+#table {
+	border-spacing: 0;
+	width: 95%;
+	align: center;
+	margin: 0 auto;
+}
+
+#table-image img {
+	height: auto;
+ 	width: 100px;
+}
+
+#table-text {
+	display: inline-block;
+	text-align:left;
+}
+
+#table-name {
+	font-weight: bold;
+}
+
+#table-bestseller {
+	color: red;
+	font-weight: bold;
+	font-size: small;
+}
+
+#table-manufacturer {
+	display:block;
+}
+
+#label {
+	font-weight: bold;
+	text-align: left;
+}
+
+#table-price {
+	margin-top: 20px;
+	color: maroon;
+	font-size: large;
+	font-weight: bold;
+}
+
+#table {
+	border-spacing: 0;
+	width: 95%;
+	align: center;
+	margin: 0 auto;
+}
+
+#table-star img {
+	height: 25px;
+ 	width: auto;
+}
+
+#gray {
+	background-color: #D3D3D3;
+}
