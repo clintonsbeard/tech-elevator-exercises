@@ -1,27 +1,10 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Product Table View</title>
-    <link rel="stylesheet" href="css/site.css" />
-</head>
-<body>
-    <header>
-        <h1>MVC Exercises - Views Part 2: Models</h1>        
-    </header>
-    <nav>
-        <ul>
-            <li><a href="productList">List Layout</a></li>
-            <li><a href="productTiles">Tile Layout</a></li>
-            <li><a href="productTable">Table Layout</a></li>
-        </ul>
-    </nav>
-    <section id="main-content">
-    	<h1>Toy Department</h1>
+	<c:import url="/WEB-INF/jsp/header.jsp">
+	    <c:param name="pageTitle" value="Toy Department" />
+	</c:import>
+	
 		<table id ="table">
 			<tr>
 				<td></td>
@@ -45,7 +28,12 @@
 			<tr>
 				<td id="label">Name</td>
 				<c:forEach var="product" items="${productList}">
-					<td id ="gray">${product.name}</td>
+					<td id ="gray">
+						<c:url var="productDetailUrl" value="/productDetail">
+							<c:param name="productId" value="${product.productId}" />
+						</c:url>
+						<a href="${productDetailUrl}"><c:out value="${product.name}" /></a>
+					</td>
 				</c:forEach>
 			</tr>
 			<tr>
@@ -75,6 +63,5 @@
 				</c:forEach>
 			</tr>
 		</table>
-    </section>
-</body>
-</html>
+		
+<c:import url="/WEB-INF/jsp/footer.jsp" />
