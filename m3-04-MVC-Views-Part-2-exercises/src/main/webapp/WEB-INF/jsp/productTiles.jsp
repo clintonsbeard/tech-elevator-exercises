@@ -8,14 +8,14 @@
 		<div id="tile-flexbox">
 			<c:forEach var="product" items="${productList}">
 				<div id="tile-item">
+					<c:url var="productDetailUrl" value="/productDetail">
+						<c:param name="productId" value="${product.productId}" />
+					</c:url>
 					<div id="tile-image">
 						<c:url value="img/${product.imageName}" var="productImage" />
-						<img src="${productImage}">
+						<a href="${productDetailUrl}"><img src="${productImage}"></a>
 					</div>
 					<div id="tile-name">
-						<c:url var="productDetailUrl" value="/productDetail">
-							<c:param name="productId" value="${product.productId}" />
-						</c:url>
 						<a href="${productDetailUrl}"><c:out value="${product.name}" /></a>
 					</div>
 					<c:choose>

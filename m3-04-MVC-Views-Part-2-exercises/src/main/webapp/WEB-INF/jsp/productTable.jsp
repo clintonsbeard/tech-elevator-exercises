@@ -5,11 +5,15 @@
 	    <c:param name="pageTitle" value="Toy Department" />
 	</c:import>
 	
+		<c:url var="productDetailUrl" value="/productDetail">
+			<c:param name="productId" value="${product.productId}" />
+		</c:url>
+						
 		<table id ="table">
 			<tr>
 				<td></td>
 				<c:forEach var="product" items="${productList}">
-					<td id="table-image"><img src="img/${product.imageName}"></td>
+					<td id="table-image"><a href="${productDetailUrl}"><img src="img/${product.imageName}"></a></td>
 				</c:forEach>
 			</tr>
 			<tr>
@@ -29,9 +33,6 @@
 				<td id="label">Name</td>
 				<c:forEach var="product" items="${productList}">
 					<td id ="gray">
-						<c:url var="productDetailUrl" value="/productDetail">
-							<c:param name="productId" value="${product.productId}" />
-						</c:url>
 						<a href="${productDetailUrl}"><c:out value="${product.name}" /></a>
 					</td>
 				</c:forEach>
