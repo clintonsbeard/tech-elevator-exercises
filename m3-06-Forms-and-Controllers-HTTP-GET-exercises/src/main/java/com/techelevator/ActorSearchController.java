@@ -21,23 +21,21 @@ public class ActorSearchController {
 	@Autowired
 	private ActorDao actorDao;
 
-	/* What request mapping do we want here */
 	@RequestMapping("/actorSearch")
 	public String showSearchActorForm() {
 		return "actorList";
 	}
 
-	/* What about here? */
-	@RequestMapping("/search")
+	@RequestMapping("/actorResults")
 	public String searchActors(HttpServletRequest request) {
 		
 		String searchTerm = request.getParameter("searchTerm"); 
 	
-		/* Call the model and pass values to the jsp */
 		List<Actor> actors = actorDao.getMatchingActors(searchTerm);
 	
 		request.setAttribute("actors", actors);
 		
 		return "actorList";
 	}
+	
 }
