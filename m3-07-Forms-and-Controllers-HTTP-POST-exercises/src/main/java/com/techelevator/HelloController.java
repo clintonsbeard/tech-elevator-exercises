@@ -30,11 +30,6 @@ public class HelloController {
 		return "writeReview";
 	}
 	
-	@RequestMapping("/error")
-	public String displayError() {
-		return "error";
-	}
-	
 	@RequestMapping(path="/", method=RequestMethod.GET)
 	public String getAllReviews(ModelMap map) {
 		map.addAttribute("reviews", reviewDao.getAllReviews());
