@@ -23,7 +23,7 @@ public class JdbcReviewDao implements ReviewDao {
 	@Override
 	public List<Review> getAllReviews() {
 		List<Review> allReviews = new ArrayList<>();
-		String sqlSelectAllReviews = "SELECT * FROM reviews";
+		String sqlSelectAllReviews = "SELECT * FROM reviews ORDER BY review_date DESC";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllReviews);
 		while(results.next()) {
 			Review review = new Review();
