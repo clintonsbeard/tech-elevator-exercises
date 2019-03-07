@@ -3,8 +3,25 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
-<c:forEach var="thing" items="${things}">
-	<c:out value="${thing.color}"/>
-</c:forEach>
+	<div id="container">
+		<div class="value">
+			<div class="label">
+				<c:out value="Favorite Color: "/>
+			</div>
+			<c:out value="${things.color}"/>
+		</div>
+		<div class="value">
+			<div class="label">
+				<c:out value="Favorite Food: "/>
+			</div>
+			<c:out value="${things.food}"/>
+		</div>
+		<div class="value">
+			<div class="label">
+				<c:out value="Favorite Season: "/>
+			</div>
+			<c:out value="${things.season}"/>
+		</div>
+	</div>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp"/>

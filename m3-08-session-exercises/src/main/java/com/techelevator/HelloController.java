@@ -39,13 +39,18 @@ public class HelloController {
 	public String postAnswer1(ModelMap map, @RequestParam String color) {
 		if (map.get("things") == null) {
 			favorite = new FavoriteThings();
-			favorite.setColor(color);
-			map.addAttribute("things", favorite);
 		}
 		else {
 			favorite = (FavoriteThings)map.get("things");
-			favorite.setColor(color);
 		}
+		favorite.setColor(color);
+		map.put("things", favorite);
+		
+		return "redirect:/getQuestion2";
+	}
+	
+	@RequestMapping(path="/getQuestion2", method=RequestMethod.GET)
+	public String getQuestion2() {
 		return "redirect:/page2";
 	}
 	
@@ -53,13 +58,18 @@ public class HelloController {
 	public String postAnswer2(ModelMap map, @RequestParam String food) {
 		if (map.get("things") == null) {
 			favorite = new FavoriteThings();
-			favorite.setFood(food);
-			map.addAttribute("things", favorite);
 		}
 		else {
 			favorite = (FavoriteThings)map.get("things");
-			favorite.setFood(food);
 		}
+		favorite.setFood(food);
+		map.put("things", favorite);
+		
+		return "redirect:/getQuestion3";
+	}
+	
+	@RequestMapping(path="/getQuestion3", method=RequestMethod.GET)
+	public String getQuestion3() {
 		return "redirect:/page3";
 	}
 	
@@ -67,14 +77,18 @@ public class HelloController {
 	public String postAnswer3(ModelMap map, @RequestParam String season) {
 		if (map.get("things") == null) {
 			favorite = new FavoriteThings();
-			favorite.setSeason(season);
-			map.addAttribute("things", favorite);
 		}
 		else {
 			favorite = (FavoriteThings)map.get("things");
-			favorite.setSeason(season);
 		}
-		map.get(favorite);
+		favorite.setSeason(season);
+		map.put("things", favorite);
+		return "redirect:/getSummary";
+	}
+	
+	@RequestMapping(path="/getSummary", method=RequestMethod.GET)
+	public String getSummary(ModelMap map) {
+		map.get("things");
 		return "redirect:/summary";
 	}
 	

@@ -6,3 +6,20 @@ input[type=text] {
 	display: block;
 	margin-top: 20px;
 }
+
+.label {
+	display: inline;
+	font-weight: bold;
+	width: 120px;
+}
+
+.value {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 3px;
+}
+
+#container {
+	display: flex;
+	flex-direction: column;
+}
