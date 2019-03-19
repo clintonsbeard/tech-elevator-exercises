@@ -6,6 +6,10 @@
  * @returns {number} 1
  */
 
+ function turnOn() {
+   return true;
+ }
+
 /**
  * Create a function called returnsName.
  *
@@ -14,6 +18,10 @@
  * @returns {string} your name
  */
 
+ function returnsName() {
+   return 'Clinton Beardsley';
+ }
+
 /**
  * Create a function called returnGivenParameter that takes a
  * single parameter and then returns it.
@@ -21,6 +29,10 @@
  * @param {any} thing any value
  * @returns {any} the parameter that we were given
  */
+
+ function returnGivenParameter(thing) {
+   return thing;
+ }
 
 /**
  * Now create a function called takeOptionalParameter
@@ -31,6 +43,10 @@
  * @param {any} [thing=0] any value
  * @returns {any} the parameter given, or 0 if none is given
  */
+
+ function takeOptionalParameter(thing = 0) {
+   return thing;
+ }
 
 /**
  * Write an anonymous function in the filter that will
@@ -43,9 +59,12 @@
  * @param {number[]} arrayToFilter the array that the user wants us to filter
  * @returns {number[]} the filtered array
  */
+
 function filterArrayToOnlySingleDigitNumbers(arrayToFilter) {
   return arrayToFilter.filter(
-    // WRITE CODE HERE
+    (element) => {
+      return element < 10 && element > -10;
+    }
   );
 }
 
@@ -59,9 +78,12 @@ function filterArrayToOnlySingleDigitNumbers(arrayToFilter) {
  * @param {number[]} arrayToDouble the array that the user wants doubled
  * @returns {number[]} a array that has each number doubled
  */
+
 function mapArrayToDoubleAllNumbers(arrayToDouble) {
   return arrayToDouble.map(
-    // WRITE CODE HERE
+    (element) => {
+      return element * 2;
+    }
   );
 }
 
@@ -76,9 +98,12 @@ function mapArrayToDoubleAllNumbers(arrayToDouble) {
  * @param {number[]} arrayToMultiply the numbers the user wants multiplied
  * @returns {number} the product of the array
  */
+
 function reduceArrayToFindProduct(arrayToMultiply) {
   return arrayToMultiply.reduce(
-    // WRITE CODE HERE
+    (currentResult, element) => {
+      return currentResult * element;
+    }
   );
 }
 
@@ -89,9 +114,12 @@ function reduceArrayToFindProduct(arrayToMultiply) {
  * @param {string[]} arrayToFilter the array to filter
  * @returns {string[]} the filtered array
  */
+
 function filterStringArrayForSon(arrayToFilter) {
   return arrayToFilter.filter(
-    // WRITE CODE HERE
+    (element) => {
+      return element.includes('son');
+    }
   );
 }
 
@@ -102,9 +130,12 @@ function filterStringArrayForSon(arrayToFilter) {
  * @param {string[]} arrayToCapitalize array to capitalize names of
  * @returns {string[]} names in all upper case
  */
+
 function makeNamesAllCaps(arrayToCapitalize) {
   return arrayToCapitalize.map(
-    // WRITE CODE HERE
+    (element) => {
+      return element.toUpperCase();
+    }
   );
 }
 
@@ -120,15 +151,22 @@ function makeNamesAllCaps(arrayToCapitalize) {
  */
 
 function convertTemperature(temperature, temperatureUnit, includeUnit = false) {
+  // Declaring convertedTemp variable up here so it's not out of scope when we go to get it at the end
   let convertedTemp = 0;
+  // Conversion return defaults to being Fahrenheit for the same reason, not sure why F was chosen
   let convertedUnit = 'F';
+  // If it's Celsius coming in
   if (temperatureUnit === 'C' || temperatureUnit === 'c') {
+    // Convert to Fahrenheit
     convertedTemp = (temperature * 9) / 5 + 32;
+    // And tell the user the converted temperature is being returned in Fahrenheit
     convertedUnit = 'F';
   } else {
+    // Convert to Celsius (Assuming there's no Kelvin being factored in to this equation)
     convertedTemp = ((temperature - 32) * 5) / 9;
+    // Tell the user the converted temperature is being returned in Celsius
     convertedUnit = 'C';
   }
-
+  // Retrurn the converted temperature in String form, the method doesn't wish to show what the conversion is returning in (false) so add an empty string on at the end
   return convertedTemp + (includeUnit ? convertedUnit : ''); // convert to string
 }

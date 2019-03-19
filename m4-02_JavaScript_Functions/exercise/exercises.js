@@ -1,6 +1,13 @@
-/*
- * Document this function
+/**
+ * Takes the details about time and location to figure out if it's summer
+ * in the northern hemisphere, southern hemisphere or neither
+ *
+ * @param {string} month what month is currently is
+ * @param {string} [day = 1] what day it currently is, defaults to 1 if not entered
+ * @param {string} [hemisphere = northern] defaults to northern in the arguments so it can be returned without declaring it later
+ * @returns {string} is it summer in the northern hemisphere, the southern hemisphere, or neither (false)?
  */
+
 function isSummer(month, day = 1, hemisphere = 'northern') {
   if (month === 7 || month === 8) {
     return hemisphere === 'northern';
@@ -41,6 +48,22 @@ function isSummer(month, day = 1, hemisphere = 'northern') {
  * @returns {boolean} true if they are admitted
  */
 
+function isAdmitted(gpa, satScore = 0, recommendation = false) {
+  if (gpa > 3 && recommendation === true) {
+    return true;
+  }
+  else if (satScore > 1200 && recommendation === true) {
+    return true;
+  }
+  else if (satScore > 1300) {
+    return true;
+  }
+  else if (gpa > 4) {
+    return true;
+  }
+  return false;
+}
+
 /**
  * Write a function so that it takes an anonymous function and
  * uses that in `unfilteredArray` filter function. Return the result.
@@ -48,7 +71,15 @@ function isSummer(month, day = 1, hemisphere = 'northern') {
  * @param {function} filterFunction the function to filter with
  * @returns {number[]} the filtered array
  */
-let unfilteredArray = [1, 2, 3, 4, 5, 6];
+
+function useParameterToFilterArray(filterFunction) {
+  let unfilteredArray = [1, 2, 3, 4, 5, 6];
+  let filteredNumbers = unfilteredArray.filter(
+    (filterFunction) => {
+      return filteredNumbers;
+    }
+  );
+}
 
 /**
  * Write a function called makeNumber to take two strings
@@ -63,6 +94,12 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @returns {number} the resultant number
  */
 
+function makeNumber(first, second = '') {
+  let number = first + second;
+  let numberInt = parseInt(number, 10);
+  return numberInt;
+}
+
 /**
  * Write a function that takes an unknown number of parameters
  * and adds them all together. Return the result.
@@ -71,11 +108,36 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @returns {number} the sum of all the parameters (or arguments)
  */
 
+function addAll() {
+    let number = 0;
+    for(let i = 0; i < arguments.length; i++) {
+        number += arguments[i];
+    }
+    return number;
+}
+
 /*
  * Write and document a function called makeHappy that takes
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
  */
+
+ /**
+ * Takes an array of strings and prepends 'Happy ' to the beginning of each string and returns it
+ *
+ * @param {string} array an array of 
+ * @param {string} [day = 1] what day it currently is where the user is, defaults to 0 if not entered
+ * @param {string} [hemisphere = northern] what hemisphere the user is currently in, defaults to northern if not entered
+ */
+
+function makeHappy(array) {
+  let happyString = array.map(
+    (string) => {
+      return 'Happy ' + string;
+    }
+  );
+  return happyString;
+}
 
 /*
  * Write and document a function called getFullAddressesOfProperties
@@ -95,12 +157,31 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * Use `map` and an anonymous function.
  */
 
+function getFullAddressesOfProperties(array) {
+  let happyString = array.map(
+    (string) => {
+      return `${string.streetNumber} ${string.streetName} ${string.streetType} ${string.city} ${string.state} ${string.zip}`;
+    }
+  );
+  return happyString;
+}
+
 /*
  * Create and document a function called findLargest.
  *
  * Using `forEach`, find the largest element in an array.
  * It should work for strings and numbers.
  */
+
+function findLargest(array) {
+  let result = 0;
+  array.forEach(
+    (number) => {
+      
+    }
+  );
+  return result;
+}
 
 /*
  * CHALLENGE
