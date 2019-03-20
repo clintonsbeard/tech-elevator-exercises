@@ -1,9 +1,9 @@
 /**
  * Takes the details about time and location to figure out if it's summer
  * in the northern hemisphere, southern hemisphere or neither
- *
- * @param {string} month what month is currently is
- * @param {string} [day = 1] what day it currently is, defaults to 1 if not entered
+ *-
+ * @param {number} month what month is currently is
+ * @param {number} [day = 1] what day it currently is, defaults to 1 if not entered
  * @param {string} [hemisphere = northern] defaults to northern in the arguments so it can be returned without declaring it later
  * @returns {string} is it summer in the northern hemisphere, the southern hemisphere, or neither (false)?
  */
@@ -74,11 +74,12 @@ function isAdmitted(gpa, satScore = 0, recommendation = false) {
 
 function useParameterToFilterArray(filterFunction) {
   let unfilteredArray = [1, 2, 3, 4, 5, 6];
-  let filteredNumbers = unfilteredArray.filter(
-    (filterFunction) => {
-      return filteredNumbers;
+  let filteredArray = unfilteredArray.filter(
+    (number) => {
+      return filterFunction(number);
     }
   );
+  return filteredArray;
 }
 
 /**
@@ -95,9 +96,8 @@ function useParameterToFilterArray(filterFunction) {
  */
 
 function makeNumber(first, second = '') {
-  let number = first + second;
-  let numberInt = parseInt(number, 10);
-  return numberInt;
+  let number = `${first}${second}`;
+  return parseInt(number, 10);;
 }
 
 /**
@@ -125,18 +125,17 @@ function addAll() {
  /**
  * Takes an array of strings and prepends 'Happy ' to the beginning of each string and returns it
  *
- * @param {string} array an array of 
- * @param {string} [day = 1] what day it currently is where the user is, defaults to 0 if not entered
- * @param {string} [hemisphere = northern] what hemisphere the user is currently in, defaults to northern if not entered
+ * @param {string} array an array of strings
+ * @returns {string} the new array with 'Happy ' prepended to the beginning of the individual strings inside
  */
 
 function makeHappy(array) {
-  let happyString = array.map(
+  let happyArray = array.map(
     (string) => {
       return 'Happy ' + string;
     }
   );
-  return happyString;
+  return happyArray;
 }
 
 /*
@@ -157,13 +156,27 @@ function makeHappy(array) {
  * Use `map` and an anonymous function.
  */
 
-function getFullAddressesOfProperties(array) {
-  let happyString = array.map(
-    (string) => {
-      return `${string.streetNumber} ${string.streetName} ${string.streetType} ${string.city} ${string.state} ${string.zip}`;
+ /**
+ * Takes an array of arrays containing address information and prints each 
+ * array out as a working address.
+ *
+ * @param {string} [arrayOfArrays] array of addresses
+ * @param {string} array.streetNumber street number for the address
+ * @param {string} array.streetName street name for the address
+ * @param {string} array.streetType street type for the address
+ * @param {string} array.city city for the address
+ * @param {string} array.state state for the address
+ * @param {string} array.zip postal/zip code for the address
+ * @returns {string} the full address
+ */
+
+function getFullAddressesOfProperties(arrayOfArrays) {
+  let address = arrayOfArrays.map(
+    (array) => {
+      return `${array.streetNumber} ${array.streetName} ${array.streetType} ${array.city} ${array.state} ${array.zip}`;
     }
   );
-  return happyString;
+  return address;
 }
 
 /*
@@ -173,11 +186,28 @@ function getFullAddressesOfProperties(array) {
  * It should work for strings and numbers.
  */
 
+/**
+ * Takes in an array of either strings or numbers and compares the contents
+ * for either the largest integer or the latest string alphabetically
+ *
+ * @param {string[] or number[]} array array of strings or numbers
+ * @returns {string or number} the largest number or the latest alphabetically
+ */
+
 function findLargest(array) {
-  let result = 0;
+  let result = [];
   array.forEach(
-    (number) => {
-      
+    (item) => {
+      if (typeof item === 'number') {
+        if (item > result) {
+          result = item;
+        }
+      }
+      else if (typeof item === 'string') {
+        if (item.localeCompare(result) === 1) {
+          result = item;
+        }
+      }
     }
   );
   return result;
@@ -200,3 +230,22 @@ function findLargest(array) {
  *
  * Read the tests to verify you have the correct behavior.
  */
+
+ /**
+ * Takes an array of arrays of numbers and adds them all up into one number.
+ *
+ * @param {string} [arrayOfArrays=[]] array of arrays of numbers, defaults to empty if not explicitly given
+ * @returns {number} the sum of all the arrays inside the array
+ */
+
+function getSumOfSubArrayValues(arrayOfArrays=[]) {
+  return arrayOfArrays.reduce(
+    (total, array) => {
+      return total + array.reduce(
+        (sum, number) => {
+          return sum + number;
+        }
+      ,0);
+    }
+  ,0);
+}

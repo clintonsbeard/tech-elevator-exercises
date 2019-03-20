@@ -6,14 +6,37 @@ Help Bob — to check his answers, he needs a program that among the given numbe
 and return the position of this number. Keep in mind that your task is to help Bob solve a real IQ test,
 which means indexes of the elements start from 1 (not 0)_
 
-		iqTest("2 4 7 8 10") → 3 //third number is odd, while the rest are even
-		iqTest("1 2 1 1") → 2 // second number is even, while the rest are odd
-		iqTest("") → 0 // there are no numbers in the given set
-		iqTest("2 2 4 6") → 0 // all numbers are even, therefore there is no position of an odd number */
+	iqTest("2 4 7 8 10") → 3 //third number is odd, while the rest are even
+	iqTest("1 2 1 1") → 2 // second number is even, while the rest are odd
+	iqTest("") → 0 // there are no numbers in the given set
+	iqTest("2 2 4 6") → 0 // all numbers are even, therefore there is no position of an odd number */
 
 function iqTest() {
-
+	return 0;
 }
+
+	// let evenCount = 0;
+	// let oddCount = 0;
+	// let evenAnswer = 0;
+	// let oddAnswer = 0;
+	// for(let i = 0; i < arguments.length; i++) {
+	// 	if(arguments[i] % 2 === 0) {
+	// 		evenCount++;
+	// 		evenAnswer = i;
+	// 	}
+	// 	else if(arguments[i] % 2 !== 0) {
+	// 		oddCount++;
+	// 		oddAnswer = i;
+	// 	}
+	// 	if (arguments[i] === arguments.length - 1) {
+	// 		if(evenCount === 1) {
+	// 			return evenAnswer + 1;
+	// 		}
+	// 		else if(oddCount === 1) {
+	// 			return oddAnswer + 1;
+	// 		}
+	// 	}
+	// }
 
 /* 2. **titleCase**
 Write a function that will convert a string into title case, given an optional list of exceptions (minor words).
