@@ -38,6 +38,37 @@ function addTodos() {
   todoList.appendChild(ul);
 }
 
-init();
-addPageTitle();
-addTodos();
+document.addEventListener('DOMContentLoaded', () => {
+  init();
+  addPageTitle();
+  addTodos();
+
+  const tasks = todoList.querySelectorAll('li')
+
+  tasks.forEach((task) => {
+
+    task.addEventListener('click', () => {
+      if (!task.hasAttribute('class', 'completed')) {
+        task.classList.add('completed')
+        task.querySelector('i').classList.add('completed')
+      }
+    })
+
+    task.addEventListener('dblclick', () => {
+      if (task.hasAttribute('class', 'completed')) {
+        task.classList.remove('completed')
+        task.querySelector('i').classList.remove('completed')
+      }
+    })
+
+  })
+
+  const completeAll = document.getElementById('btnCompleteAll')
+  completeAll.addEventListener('click', () => {
+    tasks.forEach((task) => {
+      task.classList.add('completed')
+      task.querySelector('i').classList.add('completed')
+    })
+  })
+
+});
