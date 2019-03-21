@@ -13,10 +13,12 @@ const groceries = [
   { id: 10, name: 'Tea', completed: false }
 ];
 
+
 /**
  * This function will get a reference to the title and set its text to the value
  * of the pageTitle variable that was set above.
  */
+
 function setPageTitle() {
   const title = document.getElementById('title');
   title.innerText = pageTitle;
@@ -25,6 +27,7 @@ function setPageTitle() {
 /**
  * This function will loop over the array of groceries that was set above and add them to the DOM.
  */
+
 function displayGroceries() {
   const ul = document.querySelector('ul');
   groceries.forEach((item) => {
@@ -37,5 +40,52 @@ function displayGroceries() {
   });
 }
 
-setPageTitle();
-displayGroceries();
+document.addEventListener('DOMContentLoaded', () => {
+  setPageTitle();
+  displayGroceries();
+
+  const groceriesList = document.querySelectorAll('li')
+
+  groceriesList.forEach((item) => {
+
+    item.addEventListener('click', () => {
+      if (!item.hasAttribute('class', 'completed')) {
+        item.classList.add('completed')
+        item.querySelector('i').classList.add('completed')
+      }
+    })
+
+    item.addEventListener('dblclick', () => {
+      if (item.hasAttribute('class', 'completed')) {
+        item.classList.remove('completed')
+        item.querySelector('i').classList.remove('completed')
+      }
+    })
+
+  })
+
+  const toggleAll = document.getElementById('toggleAll')
+
+  toggleAll.addEventListener('click', () => {
+    if (allItemsIncomplete) {
+      toggleAll.innerText = 'Mark All Incomplete';
+      allItemsIncomplete === false;
+    }
+    else {
+      toggleAll.innerText = 'Mark All Complete';
+      allItemsIncomplete === true;
+    }
+    const groceriesList = document.querySelectorAll('li')
+    groceriesList.forEach((item) => {
+      if (!item.hasAttribute('class', 'completed')) {
+        item.classList.add('completed')
+        item.querySelector('i').classList.add('completed')
+      }
+      else {
+        item.classList.remove('completed')
+        item.querySelector('i').classList.remove('completed')
+      }
+    })
+  })
+
+});
