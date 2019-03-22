@@ -65,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   const toggleAll = document.getElementById('toggleAll')
-
   toggleAll.addEventListener('click', () => {
     if (allItemsIncomplete) {
       toggleAll.innerText = 'Mark All Incomplete';
